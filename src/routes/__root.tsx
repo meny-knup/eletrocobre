@@ -31,7 +31,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Eletrocobre | Cabos e fios para orçamento" },
+      { title: "Eletrocobre | Cabos e Fios de Qualidade" },
       {
         name: "description",
         content:
@@ -39,6 +39,13 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "Eletrocobre | Cabos e Fios de Qualidade" },
+      { name: "twitter:title", content: "Eletrocobre | Cabos e Fios de Qualidade" },
+      { name: "description", content: "A Eletrocobre conecta obras, indústrias, projetos solares e revendas a soluções em cabos e fios com suporte consultivo, agilidade comercial e orçamento sob medi" },
+      { property: "og:description", content: "A Eletrocobre conecta obras, indústrias, projetos solares e revendas a soluções em cabos e fios com suporte consultivo, agilidade comercial e orçamento sob medi" },
+      { name: "twitter:description", content: "A Eletrocobre conecta obras, indústrias, projetos solares e revendas a soluções em cabos e fios com suporte consultivo, agilidade comercial e orçamento sob medi" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/vBc8ZhRYb4TCBmR2CU3qd7b1JVb2/social-images/social-1777055869892-Eletrocobre_Logo.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/vBc8ZhRYb4TCBmR2CU3qd7b1JVb2/social-images/social-1777055869892-Eletrocobre_Logo.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
