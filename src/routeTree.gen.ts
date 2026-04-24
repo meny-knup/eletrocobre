@@ -15,6 +15,7 @@ import { Route as ProductsRouteImport } from './routes/products'
 import { Route as HowToChooseRouteImport } from './routes/how-to-choose'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SegmentsIndexRouteImport } from './routes/segments.index'
 import { Route as SegmentsRevendedoresRouteImport } from './routes/segments.revendedores'
 import { Route as SegmentsIndustriasRouteImport } from './routes/segments.industrias'
 import { Route as SegmentsEnergiaSolarRouteImport } from './routes/segments.energia-solar'
@@ -50,6 +51,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SegmentsIndexRoute = SegmentsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SegmentsRoute,
+} as any)
 const SegmentsRevendedoresRoute = SegmentsRevendedoresRouteImport.update({
   id: '/revendedores',
   path: '/revendedores',
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/segments/energia-solar': typeof SegmentsEnergiaSolarRoute
   '/segments/industrias': typeof SegmentsIndustriasRoute
   '/segments/revendedores': typeof SegmentsRevendedoresRoute
+  '/segments/': typeof SegmentsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -89,11 +96,11 @@ export interface FileRoutesByTo {
   '/how-to-choose': typeof HowToChooseRoute
   '/products': typeof ProductsRoute
   '/quote': typeof QuoteRoute
-  '/segments': typeof SegmentsRouteWithChildren
   '/segments/construcao-civil': typeof SegmentsConstrucaoCivilRoute
   '/segments/energia-solar': typeof SegmentsEnergiaSolarRoute
   '/segments/industrias': typeof SegmentsIndustriasRoute
   '/segments/revendedores': typeof SegmentsRevendedoresRoute
+  '/segments': typeof SegmentsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -107,6 +114,7 @@ export interface FileRoutesById {
   '/segments/energia-solar': typeof SegmentsEnergiaSolarRoute
   '/segments/industrias': typeof SegmentsIndustriasRoute
   '/segments/revendedores': typeof SegmentsRevendedoresRoute
+  '/segments/': typeof SegmentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +129,7 @@ export interface FileRouteTypes {
     | '/segments/energia-solar'
     | '/segments/industrias'
     | '/segments/revendedores'
+    | '/segments/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -128,11 +137,11 @@ export interface FileRouteTypes {
     | '/how-to-choose'
     | '/products'
     | '/quote'
-    | '/segments'
     | '/segments/construcao-civil'
     | '/segments/energia-solar'
     | '/segments/industrias'
     | '/segments/revendedores'
+    | '/segments'
   id:
     | '__root__'
     | '/'
@@ -145,6 +154,7 @@ export interface FileRouteTypes {
     | '/segments/energia-solar'
     | '/segments/industrias'
     | '/segments/revendedores'
+    | '/segments/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -200,6 +210,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/segments/': {
+      id: '/segments/'
+      path: '/'
+      fullPath: '/segments/'
+      preLoaderRoute: typeof SegmentsIndexRouteImport
+      parentRoute: typeof SegmentsRoute
+    }
     '/segments/revendedores': {
       id: '/segments/revendedores'
       path: '/revendedores'
@@ -236,6 +253,7 @@ interface SegmentsRouteChildren {
   SegmentsEnergiaSolarRoute: typeof SegmentsEnergiaSolarRoute
   SegmentsIndustriasRoute: typeof SegmentsIndustriasRoute
   SegmentsRevendedoresRoute: typeof SegmentsRevendedoresRoute
+  SegmentsIndexRoute: typeof SegmentsIndexRoute
 }
 
 const SegmentsRouteChildren: SegmentsRouteChildren = {
@@ -243,6 +261,7 @@ const SegmentsRouteChildren: SegmentsRouteChildren = {
   SegmentsEnergiaSolarRoute: SegmentsEnergiaSolarRoute,
   SegmentsIndustriasRoute: SegmentsIndustriasRoute,
   SegmentsRevendedoresRoute: SegmentsRevendedoresRoute,
+  SegmentsIndexRoute: SegmentsIndexRoute,
 }
 
 const SegmentsRouteWithChildren = SegmentsRoute._addFileChildren(
