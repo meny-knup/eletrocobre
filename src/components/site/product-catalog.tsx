@@ -4,6 +4,7 @@ import { Cable, Factory, Filter, House, Layers3, SunMedium } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { ProductImagePlaceholder } from "@/components/site/product-image-placeholder";
 import {
   guidedSelectorOptions,
   products,
@@ -207,6 +208,7 @@ export function ProductCatalog() {
           <Card key={product.id} className="premium-card rounded-lg border-border/70 bg-card/75 shadow-none">
             <CardContent className="p-6">
               <div className="flex flex-col gap-4">
+                <ProductImagePlaceholder application={product.application} gauge={product.gauge} />
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{product.category}</p>
