@@ -11,7 +11,7 @@ import {
   TimerReset,
 } from "lucide-react";
 import heroImage from "@/assets/eletrocobre-hero.jpg";
-import { QuoteForm } from "@/components/site/quote-form";
+import { QuoteCta } from "@/components/site/quote-cta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -273,7 +273,7 @@ function HomePage() {
               <span>Apoio comercial para todo o Brasil</span>
             </div>
           </div>
-          <QuoteForm compact title="Solicitar orçamento agora" />
+          <QuoteCta title="Solicitar orçamento agora" />
         </div>
       </section>
     </div>
