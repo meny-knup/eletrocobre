@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { MessageCircle } from "lucide-react";
 import heroImage from "@/assets/eletrocobre-hero.jpg";
-import { QuoteForm } from "@/components/site/quote-form";
+import { QuoteCta } from "@/components/site/quote-cta";
+import { Button } from "@/components/ui/button";
 import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site-data";
 
 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -12,16 +14,16 @@ export const Route = createFileRoute("/quote")({
       {
         name: "description",
         content:
-          "Solicite um orçamento de cabos e fios com atendimento consultivo, resposta rápida e suporte via WhatsApp.",
+          "Solicite um orçamento de cabos e fios direto pelo WhatsApp, com atendimento rápido para todo o Brasil.",
       },
       { property: "og:title", content: "Solicitar orçamento | Eletrocobre" },
       {
         property: "og:description",
-        content: "Envie seu projeto e receba atendimento consultivo para cotação sob medida.",
+        content: "Fale com a Eletrocobre pelo WhatsApp e receba uma cotação sob medida.",
       },
       { property: "og:image", content: heroImage },
       { name: "twitter:title", content: "Solicitar orçamento | Eletrocobre" },
-      { name: "twitter:description", content: "Cotação rápida de cabos e fios com suporte consultivo." },
+      { name: "twitter:description", content: "Cotação rápida de cabos e fios pelo WhatsApp." },
       { name: "twitter:image", content: heroImage },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/quote` }],
@@ -35,35 +37,44 @@ function QuotePage() {
       <section className="site-section border-b border-border/70">
         <div className="site-container max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Orçamento</p>
-          <h1 className="mt-3 font-display text-5xl font-semibold text-foreground">Solicite um orçamento rápido para o seu projeto.</h1>
+          <h1 className="mt-3 font-display text-5xl font-semibold text-foreground">
+            Solicite seu orçamento direto pelo WhatsApp.
+          </h1>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Informe a necessidade, a aplicação ou a bitola desejada. Se precisar, nossa equipe ajuda a indicar o produto certo antes de fechar a compra.
+            Fale com nosso time comercial e receba uma cotação sob medida para a sua obra, indústria, projeto solar ou revenda. Atendimento rápido para todo o Brasil.
           </p>
+          <div className="mt-8">
+            <Button asChild size="lg" className="min-w-56 shadow-[var(--shadow-copper)]">
+              <a href={whatsappLink} rel="noreferrer" target="_blank">
+                <MessageCircle className="size-5" />
+                Falar no WhatsApp
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
       <section className="site-section">
-        <div className="site-container grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="site-container grid gap-6 lg:grid-cols-2">
           <div className="premium-card p-6 md:p-8">
-            <h2 className="font-display text-3xl font-semibold text-foreground">Fale do seu jeito</h2>
-            <p className="mt-4 text-sm leading-6 text-muted-foreground">
-              Use o formulário para já sair com a mensagem pronta no WhatsApp ou entre direto pelo canal de atendimento quando preferir agilidade imediata.
-            </p>
+            <h2 className="font-display text-3xl font-semibold text-foreground">Como funciona</h2>
             <div className="mt-6 space-y-3 text-sm leading-6 text-muted-foreground">
-              <p>• Nome e telefone para retorno mais rápido</p>
-              <p>• Empresa opcional para compras corporativas</p>
-              <p>• Tipo de projeto para direcionar a indicação</p>
-              <p>• Produto desejado ou aplicação necessária</p>
+              <p>• Clique no botão e abra a conversa no WhatsApp</p>
+              <p>• Nos conte o produto, a bitola ou a aplicação desejada</p>
+              <p>• Informe volume aproximado e cidade de entrega</p>
+              <p>• Nosso time retorna com a cotação e o prazo</p>
             </div>
-            <a
-              href={whatsappLink}
-              rel="noreferrer"
-              target="_blank"
-              className="mt-6 inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-            >
-              Abrir WhatsApp agora
-            </a>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <a href={whatsappLink} rel="noreferrer" target="_blank">
+                  Abrir WhatsApp agora
+                </a>
+              </Button>
+            </div>
           </div>
-          <QuoteForm title="Preencha e continue no WhatsApp" />
+          <QuoteCta
+            title="Solicitar orçamento agora"
+            description="Direcione sua demanda em segundos e converse diretamente com nossa equipe comercial pelo WhatsApp."
+          />
         </div>
       </section>
     </div>
