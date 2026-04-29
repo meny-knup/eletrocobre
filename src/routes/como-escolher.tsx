@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SITE_URL, howToChooseTopics } from "@/lib/site-data";
 
-export const Route = createFileRoute("/how-to-choose")({
+export const Route = createFileRoute("/como-escolher")({
   head: () => ({
     meta: [
       { title: "Como escolher cabos elétricos | Eletrocobre" },
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/how-to-choose")({
       },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/how-to-choose` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/como-escolher` }],
   }),
   component: HowToChoosePage,
 });
@@ -91,10 +91,10 @@ function HowToChoosePage() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild>
-                <Link to="/quote">Solicitar orçamento</Link>
+                <Link to="/orcamento">Solicitar orçamento</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/products">Explorar produtos</Link>
+                <Link to="/produtos">Explorar produtos</Link>
               </Button>
             </div>
           </div>

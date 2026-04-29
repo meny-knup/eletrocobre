@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { segmentSummaries, SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/segments/")({
+export const Route = createFileRoute("/segmentos/")({
   head: () => ({
     meta: [
       { title: "Segmentos atendidos | Eletrocobre" },
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/segments/")({
       },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/segments` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/segmentos` }],
   }),
   component: SegmentsPage,
 });

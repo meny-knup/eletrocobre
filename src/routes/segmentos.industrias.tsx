@@ -3,7 +3,7 @@ import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/segments/industrias")({
+export const Route = createFileRoute("/segmentos/industrias")({
   head: () => ({
     meta: [
       { title: "Indústrias | Eletrocobre" },
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/segments/industrias")({
       { name: "twitter:description", content: "Cabos industriais com suporte consultivo." },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/segments/industrias` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/segmentos/industrias` }],
   }),
   component: IndustriesPage,
 });
@@ -65,7 +65,7 @@ function IndustriesPage() {
               <p className="mt-3 text-sm leading-6 text-muted-foreground">Peça uma cotação e converse com a equipe sobre a aplicação e o volume necessário.</p>
             </div>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
         </div>

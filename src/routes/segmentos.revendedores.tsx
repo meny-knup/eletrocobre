@@ -3,7 +3,7 @@ import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/segments/revendedores")({
+export const Route = createFileRoute("/segmentos/revendedores")({
   head: () => ({
     meta: [
       { title: "Revendedores | Eletrocobre" },
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/segments/revendedores")({
       { name: "twitter:description", content: "Cabos e fios para revenda com negociação consultiva." },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/segments/revendedores` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/segmentos/revendedores` }],
   }),
   component: ResellersPage,
 });
@@ -65,7 +65,7 @@ function ResellersPage() {
               <p className="mt-3 text-sm leading-6 text-muted-foreground">Compartilhe o perfil da sua demanda e receba um orçamento alinhado ao seu mix.</p>
             </div>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
         </div>

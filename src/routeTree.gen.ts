@@ -9,41 +9,41 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SegmentsRouteImport } from './routes/segments'
-import { Route as QuoteRouteImport } from './routes/quote'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as HowToChooseRouteImport } from './routes/how-to-choose'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SegmentosRouteImport } from './routes/segmentos'
+import { Route as ProdutosRouteImport } from './routes/produtos'
+import { Route as OrcamentoRouteImport } from './routes/orcamento'
+import { Route as ComoEscolherRouteImport } from './routes/como-escolher'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SegmentsIndexRouteImport } from './routes/segments.index'
-import { Route as SegmentsRevendedoresRouteImport } from './routes/segments.revendedores'
-import { Route as SegmentsIndustriasRouteImport } from './routes/segments.industrias'
-import { Route as SegmentsEnergiaSolarRouteImport } from './routes/segments.energia-solar'
-import { Route as SegmentsConstrucaoCivilRouteImport } from './routes/segments.construcao-civil'
+import { Route as SegmentosIndexRouteImport } from './routes/segmentos.index'
+import { Route as SegmentosRevendedoresRouteImport } from './routes/segmentos.revendedores'
+import { Route as SegmentosIndustriasRouteImport } from './routes/segmentos.industrias'
+import { Route as SegmentosEnergiaSolarRouteImport } from './routes/segmentos.energia-solar'
+import { Route as SegmentosConstrucaoCivilRouteImport } from './routes/segmentos.construcao-civil'
 
-const SegmentsRoute = SegmentsRouteImport.update({
-  id: '/segments',
-  path: '/segments',
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
-const QuoteRoute = QuoteRouteImport.update({
-  id: '/quote',
-  path: '/quote',
+const SegmentosRoute = SegmentosRouteImport.update({
+  id: '/segmentos',
+  path: '/segmentos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
+const ProdutosRoute = ProdutosRouteImport.update({
+  id: '/produtos',
+  path: '/produtos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HowToChooseRoute = HowToChooseRouteImport.update({
-  id: '/how-to-choose',
-  path: '/how-to-choose',
+const OrcamentoRoute = OrcamentoRouteImport.update({
+  id: '/orcamento',
+  path: '/orcamento',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const ComoEscolherRoute = ComoEscolherRouteImport.update({
+  id: '/como-escolher',
+  path: '/como-escolher',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -51,156 +51,157 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SegmentsIndexRoute = SegmentsIndexRouteImport.update({
+const SegmentosIndexRoute = SegmentosIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => SegmentsRoute,
+  getParentRoute: () => SegmentosRoute,
 } as any)
-const SegmentsRevendedoresRoute = SegmentsRevendedoresRouteImport.update({
+const SegmentosRevendedoresRoute = SegmentosRevendedoresRouteImport.update({
   id: '/revendedores',
   path: '/revendedores',
-  getParentRoute: () => SegmentsRoute,
+  getParentRoute: () => SegmentosRoute,
 } as any)
-const SegmentsIndustriasRoute = SegmentsIndustriasRouteImport.update({
+const SegmentosIndustriasRoute = SegmentosIndustriasRouteImport.update({
   id: '/industrias',
   path: '/industrias',
-  getParentRoute: () => SegmentsRoute,
+  getParentRoute: () => SegmentosRoute,
 } as any)
-const SegmentsEnergiaSolarRoute = SegmentsEnergiaSolarRouteImport.update({
+const SegmentosEnergiaSolarRoute = SegmentosEnergiaSolarRouteImport.update({
   id: '/energia-solar',
   path: '/energia-solar',
-  getParentRoute: () => SegmentsRoute,
+  getParentRoute: () => SegmentosRoute,
 } as any)
-const SegmentsConstrucaoCivilRoute = SegmentsConstrucaoCivilRouteImport.update({
-  id: '/construcao-civil',
-  path: '/construcao-civil',
-  getParentRoute: () => SegmentsRoute,
-} as any)
+const SegmentosConstrucaoCivilRoute =
+  SegmentosConstrucaoCivilRouteImport.update({
+    id: '/construcao-civil',
+    path: '/construcao-civil',
+    getParentRoute: () => SegmentosRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/how-to-choose': typeof HowToChooseRoute
-  '/products': typeof ProductsRoute
-  '/quote': typeof QuoteRoute
-  '/segments': typeof SegmentsRouteWithChildren
-  '/segments/construcao-civil': typeof SegmentsConstrucaoCivilRoute
-  '/segments/energia-solar': typeof SegmentsEnergiaSolarRoute
-  '/segments/industrias': typeof SegmentsIndustriasRoute
-  '/segments/revendedores': typeof SegmentsRevendedoresRoute
-  '/segments/': typeof SegmentsIndexRoute
+  '/como-escolher': typeof ComoEscolherRoute
+  '/orcamento': typeof OrcamentoRoute
+  '/produtos': typeof ProdutosRoute
+  '/segmentos': typeof SegmentosRouteWithChildren
+  '/sobre': typeof SobreRoute
+  '/segmentos/construcao-civil': typeof SegmentosConstrucaoCivilRoute
+  '/segmentos/energia-solar': typeof SegmentosEnergiaSolarRoute
+  '/segmentos/industrias': typeof SegmentosIndustriasRoute
+  '/segmentos/revendedores': typeof SegmentosRevendedoresRoute
+  '/segmentos/': typeof SegmentosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/how-to-choose': typeof HowToChooseRoute
-  '/products': typeof ProductsRoute
-  '/quote': typeof QuoteRoute
-  '/segments/construcao-civil': typeof SegmentsConstrucaoCivilRoute
-  '/segments/energia-solar': typeof SegmentsEnergiaSolarRoute
-  '/segments/industrias': typeof SegmentsIndustriasRoute
-  '/segments/revendedores': typeof SegmentsRevendedoresRoute
-  '/segments': typeof SegmentsIndexRoute
+  '/como-escolher': typeof ComoEscolherRoute
+  '/orcamento': typeof OrcamentoRoute
+  '/produtos': typeof ProdutosRoute
+  '/sobre': typeof SobreRoute
+  '/segmentos/construcao-civil': typeof SegmentosConstrucaoCivilRoute
+  '/segmentos/energia-solar': typeof SegmentosEnergiaSolarRoute
+  '/segmentos/industrias': typeof SegmentosIndustriasRoute
+  '/segmentos/revendedores': typeof SegmentosRevendedoresRoute
+  '/segmentos': typeof SegmentosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/how-to-choose': typeof HowToChooseRoute
-  '/products': typeof ProductsRoute
-  '/quote': typeof QuoteRoute
-  '/segments': typeof SegmentsRouteWithChildren
-  '/segments/construcao-civil': typeof SegmentsConstrucaoCivilRoute
-  '/segments/energia-solar': typeof SegmentsEnergiaSolarRoute
-  '/segments/industrias': typeof SegmentsIndustriasRoute
-  '/segments/revendedores': typeof SegmentsRevendedoresRoute
-  '/segments/': typeof SegmentsIndexRoute
+  '/como-escolher': typeof ComoEscolherRoute
+  '/orcamento': typeof OrcamentoRoute
+  '/produtos': typeof ProdutosRoute
+  '/segmentos': typeof SegmentosRouteWithChildren
+  '/sobre': typeof SobreRoute
+  '/segmentos/construcao-civil': typeof SegmentosConstrucaoCivilRoute
+  '/segmentos/energia-solar': typeof SegmentosEnergiaSolarRoute
+  '/segmentos/industrias': typeof SegmentosIndustriasRoute
+  '/segmentos/revendedores': typeof SegmentosRevendedoresRoute
+  '/segmentos/': typeof SegmentosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/how-to-choose'
-    | '/products'
-    | '/quote'
-    | '/segments'
-    | '/segments/construcao-civil'
-    | '/segments/energia-solar'
-    | '/segments/industrias'
-    | '/segments/revendedores'
-    | '/segments/'
+    | '/como-escolher'
+    | '/orcamento'
+    | '/produtos'
+    | '/segmentos'
+    | '/sobre'
+    | '/segmentos/construcao-civil'
+    | '/segmentos/energia-solar'
+    | '/segmentos/industrias'
+    | '/segmentos/revendedores'
+    | '/segmentos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
-    | '/how-to-choose'
-    | '/products'
-    | '/quote'
-    | '/segments/construcao-civil'
-    | '/segments/energia-solar'
-    | '/segments/industrias'
-    | '/segments/revendedores'
-    | '/segments'
+    | '/como-escolher'
+    | '/orcamento'
+    | '/produtos'
+    | '/sobre'
+    | '/segmentos/construcao-civil'
+    | '/segmentos/energia-solar'
+    | '/segmentos/industrias'
+    | '/segmentos/revendedores'
+    | '/segmentos'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/how-to-choose'
-    | '/products'
-    | '/quote'
-    | '/segments'
-    | '/segments/construcao-civil'
-    | '/segments/energia-solar'
-    | '/segments/industrias'
-    | '/segments/revendedores'
-    | '/segments/'
+    | '/como-escolher'
+    | '/orcamento'
+    | '/produtos'
+    | '/segmentos'
+    | '/sobre'
+    | '/segmentos/construcao-civil'
+    | '/segmentos/energia-solar'
+    | '/segmentos/industrias'
+    | '/segmentos/revendedores'
+    | '/segmentos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  HowToChooseRoute: typeof HowToChooseRoute
-  ProductsRoute: typeof ProductsRoute
-  QuoteRoute: typeof QuoteRoute
-  SegmentsRoute: typeof SegmentsRouteWithChildren
+  ComoEscolherRoute: typeof ComoEscolherRoute
+  OrcamentoRoute: typeof OrcamentoRoute
+  ProdutosRoute: typeof ProdutosRoute
+  SegmentosRoute: typeof SegmentosRouteWithChildren
+  SobreRoute: typeof SobreRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/segments': {
-      id: '/segments'
-      path: '/segments'
-      fullPath: '/segments'
-      preLoaderRoute: typeof SegmentsRouteImport
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/quote': {
-      id: '/quote'
-      path: '/quote'
-      fullPath: '/quote'
-      preLoaderRoute: typeof QuoteRouteImport
+    '/segmentos': {
+      id: '/segmentos'
+      path: '/segmentos'
+      fullPath: '/segmentos'
+      preLoaderRoute: typeof SegmentosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
+    '/produtos': {
+      id: '/produtos'
+      path: '/produtos'
+      fullPath: '/produtos'
+      preLoaderRoute: typeof ProdutosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/how-to-choose': {
-      id: '/how-to-choose'
-      path: '/how-to-choose'
-      fullPath: '/how-to-choose'
-      preLoaderRoute: typeof HowToChooseRouteImport
+    '/orcamento': {
+      id: '/orcamento'
+      path: '/orcamento'
+      fullPath: '/orcamento'
+      preLoaderRoute: typeof OrcamentoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/como-escolher': {
+      id: '/como-escolher'
+      path: '/como-escolher'
+      fullPath: '/como-escolher'
+      preLoaderRoute: typeof ComoEscolherRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -210,71 +211,71 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/segments/': {
-      id: '/segments/'
+    '/segmentos/': {
+      id: '/segmentos/'
       path: '/'
-      fullPath: '/segments/'
-      preLoaderRoute: typeof SegmentsIndexRouteImport
-      parentRoute: typeof SegmentsRoute
+      fullPath: '/segmentos/'
+      preLoaderRoute: typeof SegmentosIndexRouteImport
+      parentRoute: typeof SegmentosRoute
     }
-    '/segments/revendedores': {
-      id: '/segments/revendedores'
+    '/segmentos/revendedores': {
+      id: '/segmentos/revendedores'
       path: '/revendedores'
-      fullPath: '/segments/revendedores'
-      preLoaderRoute: typeof SegmentsRevendedoresRouteImport
-      parentRoute: typeof SegmentsRoute
+      fullPath: '/segmentos/revendedores'
+      preLoaderRoute: typeof SegmentosRevendedoresRouteImport
+      parentRoute: typeof SegmentosRoute
     }
-    '/segments/industrias': {
-      id: '/segments/industrias'
+    '/segmentos/industrias': {
+      id: '/segmentos/industrias'
       path: '/industrias'
-      fullPath: '/segments/industrias'
-      preLoaderRoute: typeof SegmentsIndustriasRouteImport
-      parentRoute: typeof SegmentsRoute
+      fullPath: '/segmentos/industrias'
+      preLoaderRoute: typeof SegmentosIndustriasRouteImport
+      parentRoute: typeof SegmentosRoute
     }
-    '/segments/energia-solar': {
-      id: '/segments/energia-solar'
+    '/segmentos/energia-solar': {
+      id: '/segmentos/energia-solar'
       path: '/energia-solar'
-      fullPath: '/segments/energia-solar'
-      preLoaderRoute: typeof SegmentsEnergiaSolarRouteImport
-      parentRoute: typeof SegmentsRoute
+      fullPath: '/segmentos/energia-solar'
+      preLoaderRoute: typeof SegmentosEnergiaSolarRouteImport
+      parentRoute: typeof SegmentosRoute
     }
-    '/segments/construcao-civil': {
-      id: '/segments/construcao-civil'
+    '/segmentos/construcao-civil': {
+      id: '/segmentos/construcao-civil'
       path: '/construcao-civil'
-      fullPath: '/segments/construcao-civil'
-      preLoaderRoute: typeof SegmentsConstrucaoCivilRouteImport
-      parentRoute: typeof SegmentsRoute
+      fullPath: '/segmentos/construcao-civil'
+      preLoaderRoute: typeof SegmentosConstrucaoCivilRouteImport
+      parentRoute: typeof SegmentosRoute
     }
   }
 }
 
-interface SegmentsRouteChildren {
-  SegmentsConstrucaoCivilRoute: typeof SegmentsConstrucaoCivilRoute
-  SegmentsEnergiaSolarRoute: typeof SegmentsEnergiaSolarRoute
-  SegmentsIndustriasRoute: typeof SegmentsIndustriasRoute
-  SegmentsRevendedoresRoute: typeof SegmentsRevendedoresRoute
-  SegmentsIndexRoute: typeof SegmentsIndexRoute
+interface SegmentosRouteChildren {
+  SegmentosConstrucaoCivilRoute: typeof SegmentosConstrucaoCivilRoute
+  SegmentosEnergiaSolarRoute: typeof SegmentosEnergiaSolarRoute
+  SegmentosIndustriasRoute: typeof SegmentosIndustriasRoute
+  SegmentosRevendedoresRoute: typeof SegmentosRevendedoresRoute
+  SegmentosIndexRoute: typeof SegmentosIndexRoute
 }
 
-const SegmentsRouteChildren: SegmentsRouteChildren = {
-  SegmentsConstrucaoCivilRoute: SegmentsConstrucaoCivilRoute,
-  SegmentsEnergiaSolarRoute: SegmentsEnergiaSolarRoute,
-  SegmentsIndustriasRoute: SegmentsIndustriasRoute,
-  SegmentsRevendedoresRoute: SegmentsRevendedoresRoute,
-  SegmentsIndexRoute: SegmentsIndexRoute,
+const SegmentosRouteChildren: SegmentosRouteChildren = {
+  SegmentosConstrucaoCivilRoute: SegmentosConstrucaoCivilRoute,
+  SegmentosEnergiaSolarRoute: SegmentosEnergiaSolarRoute,
+  SegmentosIndustriasRoute: SegmentosIndustriasRoute,
+  SegmentosRevendedoresRoute: SegmentosRevendedoresRoute,
+  SegmentosIndexRoute: SegmentosIndexRoute,
 }
 
-const SegmentsRouteWithChildren = SegmentsRoute._addFileChildren(
-  SegmentsRouteChildren,
+const SegmentosRouteWithChildren = SegmentosRoute._addFileChildren(
+  SegmentosRouteChildren,
 )
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  HowToChooseRoute: HowToChooseRoute,
-  ProductsRoute: ProductsRoute,
-  QuoteRoute: QuoteRoute,
-  SegmentsRoute: SegmentsRouteWithChildren,
+  ComoEscolherRoute: ComoEscolherRoute,
+  OrcamentoRoute: OrcamentoRoute,
+  ProdutosRoute: ProdutosRoute,
+  SegmentosRoute: SegmentosRouteWithChildren,
+  SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

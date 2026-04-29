@@ -3,7 +3,7 @@ import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/segments/energia-solar")({
+export const Route = createFileRoute("/segmentos/energia-solar")({
   head: () => ({
     meta: [
       { title: "Energia solar | Eletrocobre" },
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/segments/energia-solar")({
       { name: "twitter:description", content: "Cabos solares com atendimento consultivo." },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/segments/energia-solar` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/segmentos/energia-solar` }],
   }),
   component: SolarPage,
 });
@@ -65,7 +65,7 @@ function SolarPage() {
               <p className="mt-3 text-sm leading-6 text-muted-foreground">Fale com a equipe e receba suporte para escolher o material adequado.</p>
             </div>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
         </div>

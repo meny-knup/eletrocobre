@@ -1,6 +1,6 @@
 import { Outlet, createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/segments")({
+export const Route = createFileRoute("/segmentos")({
   component: SegmentsLayout,
 });
 

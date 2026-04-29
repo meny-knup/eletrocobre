@@ -3,7 +3,7 @@ import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/about")({
+export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
       { title: "Sobre a Eletrocobre" },
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/about")({
       { name: "twitter:description", content: "Conheça o posicionamento da Eletrocobre." },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/sobre` }],
   }),
   component: AboutPage,
 });
@@ -67,7 +67,7 @@ function AboutPage() {
               <p className="mt-3 text-sm leading-6 text-muted-foreground">Fale com a equipe e receba uma proposta adequada ao seu projeto.</p>
             </div>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
         </div>

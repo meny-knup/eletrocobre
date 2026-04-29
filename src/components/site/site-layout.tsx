@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet, useLocation } from "@tanstack/react-router";
 import { Menu, MessageCircle, X } from "lucide-react";
+import logo from "@/assets/eletrocobre-logo.png";
 import { Button } from "@/components/ui/button";
 import { navItems, WHATSAPP_NUMBER } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
@@ -16,9 +17,13 @@ export function SiteLayout() {
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
         <div className="site-container flex h-18 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-            <span className="flex size-10 items-center justify-center rounded-md bg-gradient-to-br from-primary to-chart-1 font-display text-lg font-bold text-primary-foreground shadow-[var(--shadow-copper)]">
-              E
-            </span>
+            <img
+              src={logo}
+              alt="Eletrocobre"
+              width={40}
+              height={40}
+              className="size-10 rounded-md object-contain shadow-[var(--shadow-copper)]"
+            />
             <div>
               <p className="font-display text-xl font-semibold leading-none">Eletrocobre</p>
               <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">Cabos e fios para todo o Brasil</p>
@@ -44,7 +49,7 @@ export function SiteLayout() {
               </a>
             </Button>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
 
@@ -81,7 +86,7 @@ export function SiteLayout() {
                 </a>
               </Button>
               <Button asChild>
-                <Link to="/quote" onClick={() => setOpen(false)}>
+                <Link to="/orcamento" onClick={() => setOpen(false)}>
                   Solicitar orçamento
                 </Link>
               </Button>
@@ -98,9 +103,14 @@ export function SiteLayout() {
         <div className="site-container grid gap-10 py-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="flex size-10 items-center justify-center rounded-md bg-gradient-to-br from-primary to-chart-1 font-display text-lg font-bold text-primary-foreground shadow-[var(--shadow-copper)]">
-                E
-              </span>
+              <img
+                src={logo}
+                alt="Eletrocobre"
+                width={40}
+                height={40}
+                loading="lazy"
+                className="size-10 rounded-md object-contain shadow-[var(--shadow-copper)]"
+              />
               <div>
                 <p className="font-display text-xl font-semibold">Eletrocobre</p>
                 <p className="text-sm text-muted-foreground">Cabos, fios e atendimento consultivo para todo o Brasil.</p>

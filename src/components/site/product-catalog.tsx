@@ -197,7 +197,7 @@ export function ProductCatalog() {
               Limpar filtros
             </Button>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
         </div>
@@ -263,7 +263,7 @@ export function ProductCatalog() {
                 <div className="flex flex-col gap-3 border-t border-border/70 pt-4 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm text-muted-foreground">Precisa confirmar a aplicação? A equipe ajuda na seleção.</p>
                   <Button asChild>
-                    <Link to="/quote">Solicitar orçamento</Link>
+                    <Link to="/orcamento">Solicitar orçamento</Link>
                   </Button>
                 </div>
               </div>
@@ -280,7 +280,7 @@ export function ProductCatalog() {
           </p>
           <div className="mt-6 flex justify-center">
             <Button asChild>
-              <Link to="/quote">Pedir ajuda para escolher</Link>
+              <Link to="/orcamento">Pedir ajuda para escolher</Link>
             </Button>
           </div>
         </section>
