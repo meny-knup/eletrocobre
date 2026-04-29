@@ -6,13 +6,21 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// On Vercel we must NOT use the Cloudflare Workers build target — Vercel
-// expects the default Nitro output. Detect Vercel via its built-in env var
-// and disable the Cloudflare plugin so TanStack Start emits a Vercel-compatible
-// server build (.vercel/output) that Vercel deploys automatically.
+// On Vercel this site is deployed as a static SPA. TanStack Start writes its
+// client build to dist/client, so we prerender a SPA shell as index.html there
+// and let Vercel rewrite /quote and all other page URLs back to that shell.
 const isVercel = !!process.env.VERCEL;
 
 export default defineConfig({
   cloudflare: isVercel ? false : undefined,
-  tanstackStart: isVercel ? { target: "vercel" } : undefined,
+  tanstackStart: isVercel
+    ? {
+        spa: {
+          enabled: true,
+          prerender: {
+            outputPath: "/index",
+          },
+        },
+      }
+    : undefined,
 });
