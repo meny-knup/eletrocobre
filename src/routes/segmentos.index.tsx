@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { segmentSummaries, SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/segments/")({
+export const Route = createFileRoute("/segmentos/")({
   head: () => ({
     meta: [
       { title: "Segmentos atendidos | Eletrocobre" },

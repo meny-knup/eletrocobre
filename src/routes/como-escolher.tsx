@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SITE_URL, howToChooseTopics } from "@/lib/site-data";
 
-export const Route = createFileRoute("/how-to-choose")({
+export const Route = createFileRoute("/como-escolher")({
   head: () => ({
     meta: [
       { title: "Como escolher cabos elétricos | Eletrocobre" },

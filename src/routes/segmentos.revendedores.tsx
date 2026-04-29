@@ -3,7 +3,7 @@ import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/segments/revendedores")({
+export const Route = createFileRoute("/segmentos/revendedores")({
   head: () => ({
     meta: [
       { title: "Revendedores | Eletrocobre" },

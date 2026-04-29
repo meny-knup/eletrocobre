@@ -7,7 +7,7 @@ import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site-data";
 
 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-export const Route = createFileRoute("/quote")({
+export const Route = createFileRoute("/orcamento")({
   head: () => ({
     meta: [
       { title: "Solicitar orçamento | Eletrocobre" },

@@ -3,7 +3,7 @@ import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { ProductCatalog } from "@/components/site/product-catalog";
 import { SITE_URL } from "@/lib/site-data";
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/produtos")({
   head: () => ({
     meta: [
       { title: "Produtos | Cabos elétricos Eletrocobre" },
