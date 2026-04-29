@@ -28,7 +28,7 @@ export const Route = createFileRoute("/segmentos/")({
       },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/segments` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/segmentos` }],
   }),
   component: SegmentsPage,
 });

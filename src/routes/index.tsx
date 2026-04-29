@@ -76,7 +76,7 @@ function HomePage() {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button size="lg" asChild>
-                <Link to="/quote">Solicitar orçamento</Link>
+                <Link to="/orcamento">Solicitar orçamento</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href={whatsappLink} rel="noreferrer" target="_blank">
@@ -158,7 +158,7 @@ function HomePage() {
               <h2 className="mt-3 font-display text-3xl font-semibold text-foreground">Comece pela categoria que mais faz sentido para o seu projeto.</h2>
             </div>
             <Button variant="outline" asChild>
-              <Link to="/products">Ver catálogo completo</Link>
+              <Link to="/produtos">Ver catálogo completo</Link>
             </Button>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">

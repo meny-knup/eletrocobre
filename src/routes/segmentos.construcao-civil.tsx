@@ -22,7 +22,7 @@ export const Route = createFileRoute("/segmentos/construcao-civil")({
       { name: "twitter:description", content: "Cabos e fios para obras com suporte consultivo." },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/segments/construcao-civil` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/segmentos/construcao-civil` }],
   }),
   component: ConstructionPage,
 });
@@ -89,7 +89,7 @@ function SegmentTemplate({
               </p>
             </div>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
         </div>

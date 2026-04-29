@@ -26,7 +26,7 @@ export const Route = createFileRoute("/orcamento")({
       { name: "twitter:description", content: "Cotação rápida de cabos e fios pelo WhatsApp." },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/quote` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/orcamento` }],
   }),
   component: QuotePage,
 });

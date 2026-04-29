@@ -44,7 +44,7 @@ export function SiteLayout() {
               </a>
             </Button>
             <Button asChild>
-              <Link to="/quote">Solicitar orçamento</Link>
+              <Link to="/orcamento">Solicitar orçamento</Link>
             </Button>
           </div>
 
@@ -81,7 +81,7 @@ export function SiteLayout() {
                 </a>
               </Button>
               <Button asChild>
-                <Link to="/quote" onClick={() => setOpen(false)}>
+                <Link to="/orcamento" onClick={() => setOpen(false)}>
                   Solicitar orçamento
                 </Link>
               </Button>

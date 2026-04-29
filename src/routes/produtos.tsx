@@ -26,7 +26,7 @@ export const Route = createFileRoute("/produtos")({
       },
       { name: "twitter:image", content: heroImage },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/products` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/produtos` }],
   }),
   component: ProductsPage,
 });

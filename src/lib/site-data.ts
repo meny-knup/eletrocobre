@@ -18,11 +18,11 @@ export type Product = {
 };
 
 export const navItems = [
-  { label: "Produtos", to: "/products" as const },
-  { label: "Segmentos", to: "/segments" as const },
-  { label: "Como escolher", to: "/how-to-choose" as const },
-  { label: "Orçamento", to: "/quote" as const },
-  { label: "Sobre", to: "/about" as const },
+  { label: "Produtos", to: "/produtos" as const },
+  { label: "Segmentos", to: "/segmentos" as const },
+  { label: "Como escolher", to: "/como-escolher" as const },
+  { label: "Orçamento", to: "/orcamento" as const },
+  { label: "Sobre", to: "/sobre" as const },
 ];
 
 export const trustPillars = [
@@ -74,7 +74,7 @@ export const segmentSummaries = [
   {
     slug: "construcao-civil",
     title: "Construção civil",
-    to: "/segments/construcao-civil" as const,
+    to: "/segmentos/construcao-civil" as const,
     description: "Materiais para cronogramas apertados, padronização de obra e menor risco de retrabalho.",
     painPoints: ["Atraso na entrega", "Especificação incorreta", "Compras fragmentadas"],
     solutions: ["Linhas para instalações prediais", "Suporte na escolha", "Resposta comercial rápida"],
@@ -82,7 +82,7 @@ export const segmentSummaries = [
   {
     slug: "industrias",
     title: "Indústrias",
-    to: "/segments/industrias" as const,
+    to: "/segmentos/industrias" as const,
     description: "Cabos para operação contínua, painéis, máquinas e ambientes de maior exigência.",
     painPoints: ["Parada operacional", "Falha de material", "Baixa previsibilidade de abastecimento"],
     solutions: ["Portfólio industrial", "Atendimento técnico", "Condições sob medida"],
@@ -90,7 +90,7 @@ export const segmentSummaries = [
   {
     slug: "energia-solar",
     title: "Energia solar",
-    to: "/segments/energia-solar" as const,
+    to: "/segmentos/energia-solar" as const,
     description: "Soluções para instaladores e integradores que precisam de resistência e confiança no campo.",
     painPoints: ["Exposição ao tempo", "Prazos de implantação", "Compatibilidade do projeto"],
     solutions: ["Cabos para solar", "Apoio comercial ágil", "Indicação por aplicação"],
@@ -98,7 +98,7 @@ export const segmentSummaries = [
   {
     slug: "revendedores",
     title: "Revendedores",
-    to: "/segments/revendedores" as const,
+    to: "/segmentos/revendedores" as const,
     description: "Mix de produtos para giro comercial, reposição e atendimento mais competitivo ao cliente final.",
     painPoints: ["Ruptura de estoque", "Margem pressionada", "Demanda variada"],
     solutions: ["Mix estratégico", "Negociação por volume", "Apoio comercial recorrente"],
