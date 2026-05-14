@@ -45,7 +45,7 @@ function ProductsPage() {
       </section>
       <section className="site-section">
         <div className="site-container">
-          <ProductCatalog />
+          <ProductCatalogMega />
         </div>
       </section>
     </div>
