@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
-import { SITE_URL } from "@/lib/site-data";
+import { OG_IMAGE_URL, SITE_URL } from "@/lib/site-data";
 
 export const Route = createFileRoute("/segmentos/revendedores")({
   head: () => ({
@@ -17,10 +16,10 @@ export const Route = createFileRoute("/segmentos/revendedores")({
         property: "og:description",
         content: "Ganhe agilidade comercial e apoio para compor mix de produtos mais competitivo para revenda.",
       },
-      { property: "og:image", content: heroImage },
+      { property: "og:image", content: OG_IMAGE_URL },
       { name: "twitter:title", content: "Revendedores | Eletrocobre" },
       { name: "twitter:description", content: "Cabos e fios para revenda com negociação consultiva." },
-      { name: "twitter:image", content: heroImage },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/segmentos/revendedores` }],
   }),

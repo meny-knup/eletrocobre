@@ -1,5 +1,6 @@
-export const SITE_URL = "https://eletrocobre-connect.lovable.app";
+export const SITE_URL = "https://www.eletrocobre.com.br";
 export const WHATSAPP_NUMBER = "5511914945464";
+export const OG_IMAGE_URL = `${SITE_URL}/og-image.jpg`;
 
 export type ProductSegment = "residencial" | "industrial" | "solar" | "maquinas";
 

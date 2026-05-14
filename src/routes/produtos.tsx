@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { ProductCatalogMega } from "@/components/site/product-catalog-mega";
-import { SITE_URL } from "@/lib/site-data";
+import { OG_IMAGE_URL, SITE_URL } from "@/lib/site-data";
 
 export const Route = createFileRoute("/produtos")({
   head: () => ({
@@ -18,13 +17,13 @@ export const Route = createFileRoute("/produtos")({
         content:
           "Catálogo com filtros inteligentes, produtos recomendados e CTA direto para solicitar orçamento.",
       },
-      { property: "og:image", content: heroImage },
+      { property: "og:image", content: OG_IMAGE_URL },
       { name: "twitter:title", content: "Produtos | Cabos elétricos Eletrocobre" },
       {
         name: "twitter:description",
         content: "Filtros inteligentes e seleção guiada para pedir orçamento mais rápido.",
       },
-      { name: "twitter:image", content: heroImage },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/produtos` }],
   }),

@@ -1,8 +1,70 @@
 import type { ReactNode } from "react";
 import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
+import simbolo from "@/assets/eletrocobre-simbolo.png";
 import { SiteLayout } from "@/components/site/site-layout";
-import { SITE_URL } from "@/lib/site-data";
+import { OG_IMAGE_URL, SITE_URL } from "@/lib/site-data";
+
+const structuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Eletrocobre",
+      legalName: "Fornecedor e Revenda de Materiais Elétricos Ltda",
+      url: SITE_URL,
+      logo: `${SITE_URL}/assets/eletrocobre-simbolo.png`,
+      description:
+        "Distribuidora de cabos e fios elétricos para construção civil, indústria, energia solar e revendas. Orçamento sob medida e atendimento consultivo para todo o Brasil.",
+      telephone: "+55-11-91494-5464",
+      email: "contato.eletrocobre@gmail.com",
+      taxID: "65.824.251/0001-36",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "R. Barão de Penedo, 319",
+        addressLocality: "Guarulhos",
+        addressRegion: "SP",
+        postalCode: "07222-015",
+        addressCountry: "BR",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: "+55-11-91494-5464",
+        email: "contato.eletrocobre@gmail.com",
+        availableLanguage: "Portuguese",
+        areaServed: "BR",
+      },
+      areaServed: "BR",
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#localbusiness`,
+      name: "Eletrocobre",
+      legalName: "Fornecedor e Revenda de Materiais Elétricos Ltda",
+      description:
+        "Distribuidora de cabos e fios elétricos em Guarulhos, SP. Atende construção civil, indústria, energia solar e revendas com orçamento rápido via WhatsApp.",
+      url: SITE_URL,
+      telephone: "+55-11-91494-5464",
+      email: "contato.eletrocobre@gmail.com",
+      taxID: "65.824.251/0001-36",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "R. Barão de Penedo, 319",
+        addressLocality: "Guarulhos",
+        addressRegion: "SP",
+        postalCode: "07222-015",
+        addressCountry: "BR",
+      },
+      areaServed: [
+        { "@type": "City", name: "Guarulhos" },
+        { "@type": "State", name: "São Paulo" },
+        { "@type": "Country", name: "Brazil" },
+      ],
+    },
+  ],
+});
 
 function NotFoundComponent() {
   return (
@@ -31,25 +93,44 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Eletrocobre | Cabos e Fios de Qualidade" },
+      { title: "Eletrocobre | Distribuidora de Cabos e Fios Elétricos" },
       {
         name: "description",
         content:
-          "Cabos e fios elétricos para construção, indústria, energia solar e revenda com atendimento consultivo e orçamento sob medida.",
+          "Distribuidora de cabos e fios elétricos para construção civil, indústria, energia solar e revendas. Orçamento sob medida e atendimento consultivo para todo o Brasil.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { property: "og:title", content: "Eletrocobre | Cabos e Fios de Qualidade" },
-      { name: "twitter:title", content: "Eletrocobre | Cabos e Fios de Qualidade" },
-      { name: "description", content: "A Eletrocobre conecta obras, indústrias, projetos solares e revendas a soluções em cabos e fios com suporte consultivo, agilidade comercial e orçamento sob medi" },
-      { property: "og:description", content: "A Eletrocobre conecta obras, indústrias, projetos solares e revendas a soluções em cabos e fios com suporte consultivo, agilidade comercial e orçamento sob medi" },
-      { name: "twitter:description", content: "A Eletrocobre conecta obras, indústrias, projetos solares e revendas a soluções em cabos e fios com suporte consultivo, agilidade comercial e orçamento sob medi" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/vBc8ZhRYb4TCBmR2CU3qd7b1JVb2/social-images/social-1777055869892-Eletrocobre_Logo.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/vBc8ZhRYb4TCBmR2CU3qd7b1JVb2/social-images/social-1777055869892-Eletrocobre_Logo.webp" },
+      { property: "og:site_name", content: "Eletrocobre" },
+      { property: "og:title", content: "Eletrocobre | Distribuidora de Cabos e Fios Elétricos" },
+      {
+        property: "og:description",
+        content:
+          "Cabos e fios para obras, indústria, solar e revenda com atendimento consultivo, entrega rápida e orçamento sob medida para todo o Brasil.",
+      },
+      { property: "og:image", content: OG_IMAGE_URL },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:url", content: SITE_URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Eletrocobre | Distribuidora de Cabos e Fios Elétricos" },
+      {
+        name: "twitter:description",
+        content:
+          "Cabos e fios para obras, indústria, solar e revenda com orçamento sob medida e atendimento rápido para todo o Brasil.",
+      },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "canonical", href: SITE_URL },
+      { rel: "icon", type: "image/png", href: simbolo },
+      { rel: "apple-touch-icon", href: simbolo },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: structuredData,
+      },
     ],
   }),
   shellComponent: RootShell,

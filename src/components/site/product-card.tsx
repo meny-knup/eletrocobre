@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { MessageCircle, ExternalLink } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { buildQuoteWhatsappUrl, type Product } from "@/data/products";
+import { buildQuoteWhatsappUrl, WHATSAPP_NUMBER, type Product } from "@/data/products";
 import { cn } from "@/lib/utils";
+
+function buildSpecWhatsappUrl(productName: string): string {
+  const message = `Olá, preciso de informações técnicas sobre: ${productName}. Poderia me ajudar?`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
 
 type Props = { product: Product };
 
@@ -11,6 +16,7 @@ export function ProductCard({ product }: Props) {
   const [hover, setHover] = useState(false);
   const showHover = hover && product.hoverImage;
   const quoteUrl = buildQuoteWhatsappUrl(product.name);
+  const specUrl = buildSpecWhatsappUrl(product.name);
 
   return (
     <Card
@@ -63,9 +69,9 @@ export function ProductCard({ product }: Props) {
             </a>
           </Button>
           <Button asChild variant="outline" size="sm" className="w-full">
-            <a href={product.originalLink} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="size-4" />
-              Ver detalhes técnicos
+            <a href={specUrl} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="size-4" />
+              Tirar dúvidas técnicas
             </a>
           </Button>
         </div>

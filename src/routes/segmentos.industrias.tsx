@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
-import { SITE_URL } from "@/lib/site-data";
+import { OG_IMAGE_URL, SITE_URL } from "@/lib/site-data";
 
 export const Route = createFileRoute("/segmentos/industrias")({
   head: () => ({
@@ -17,10 +16,10 @@ export const Route = createFileRoute("/segmentos/industrias")({
         property: "og:description",
         content: "Reduza risco operacional com cabos adequados para cargas industriais e resposta comercial rápida.",
       },
-      { property: "og:image", content: heroImage },
+      { property: "og:image", content: OG_IMAGE_URL },
       { name: "twitter:title", content: "Indústrias | Eletrocobre" },
       { name: "twitter:description", content: "Cabos industriais com suporte consultivo." },
-      { name: "twitter:image", content: heroImage },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/segmentos/industrias` }],
   }),

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet, useLocation } from "@tanstack/react-router";
-import { Menu, MessageCircle, X } from "lucide-react";
-import logo from "@/assets/eletrocobre-logo.png";
+import { Mail, MapPin, Menu, MessageCircle, X } from "lucide-react";
+import simbolo from "@/assets/eletrocobre-simbolo.png";
 import { Button } from "@/components/ui/button";
 import { navItems, WHATSAPP_NUMBER } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
@@ -18,7 +18,7 @@ export function SiteLayout() {
         <div className="site-container flex h-18 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
             <img
-              src={logo}
+              src={simbolo}
               alt="Eletrocobre"
               width={40}
               height={40}
@@ -100,25 +100,31 @@ export function SiteLayout() {
       </main>
 
       <footer className="border-t border-border/70 bg-card/50">
-        <div className="site-container grid gap-10 py-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
+        <div className="site-container grid gap-10 py-12 lg:grid-cols-[1.3fr_0.7fr_1fr]">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src={logo}
+                src={simbolo}
                 alt="Eletrocobre"
                 width={40}
                 height={40}
                 loading="lazy"
-                className="size-10 rounded-md object-contain shadow-[var(--shadow-copper)]"
+                className="size-10 object-contain"
               />
               <div>
                 <p className="font-display text-xl font-semibold">Eletrocobre</p>
                 <p className="text-sm text-muted-foreground">Cabos, fios e atendimento consultivo para todo o Brasil.</p>
               </div>
             </div>
-            <p className="max-w-xl text-sm leading-6 text-muted-foreground">
-              Soluções em cabos elétricos para construção civil, indústria, energia solar, máquinas e revenda, com foco em agilidade comercial e suporte técnico.
+            <p className="max-w-sm text-sm leading-6 text-muted-foreground">
+              Distribuidora de cabos elétricos para construção civil, indústria, energia solar, máquinas e revenda, com foco em agilidade comercial e suporte técnico.
             </p>
+            <div className="border-t border-border/50 pt-4 space-y-0.5">
+              <p className="text-xs font-medium text-foreground/60 tracking-[0.06em]">
+                Fornecedor e Revenda de Materiais Elétricos Ltda
+              </p>
+              <p className="text-xs text-muted-foreground/70">CNPJ 65.824.251/0001-36</p>
+            </div>
           </div>
 
           <div>
@@ -134,20 +140,58 @@ export function SiteLayout() {
             </ul>
           </div>
 
-          <div>
-            <h2 className="font-display text-lg font-semibold">Contato rápido</h2>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li>Atendimento comercial para todo o Brasil</li>
-              <li>Orçamentos sob medida</li>
-              <li>Resposta rápida via WhatsApp</li>
-            </ul>
-            <div className="mt-5">
-              <Button asChild>
-                <a href={whatsappLink} rel="noreferrer" target="_blank">
-                  Falar agora
-                </a>
-              </Button>
+          <div className="space-y-5">
+            <div>
+              <h2 className="font-display text-lg font-semibold">Localização</h2>
+              <address className="mt-3 not-italic">
+                <p className="flex items-start gap-2 text-sm text-muted-foreground leading-6">
+                  <MapPin className="size-3.5 mt-0.5 shrink-0 text-primary/70" />
+                  <span>
+                    R. Barão de Penedo, 319 — Cumbica<br />
+                    Guarulhos, SP · CEP 07222-015
+                  </span>
+                </p>
+              </address>
             </div>
+            <div className="border-t border-border/50 pt-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">Contato</p>
+              <ul className="space-y-2.5 text-sm text-muted-foreground">
+                <li>Orçamentos sob medida via WhatsApp</li>
+                <li>
+                  <a
+                    href={whatsappLink}
+                    rel="noreferrer"
+                    target="_blank"
+                    className="font-medium text-primary transition-colors hover:text-primary/80"
+                  >
+                    +55 11 91494-5464
+                  </a>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <Mail className="size-3.5 shrink-0 text-primary/60" />
+                  <a
+                    href="mailto:contato.eletrocobre@gmail.com"
+                    className="transition-colors hover:text-foreground"
+                  >
+                    contato.eletrocobre@gmail.com
+                  </a>
+                </li>
+              </ul>
+              <div className="mt-4">
+                <Button asChild>
+                  <a href={whatsappLink} rel="noreferrer" target="_blank">
+                    <MessageCircle className="size-4" />
+                    Falar agora
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-border/60">
+          <div className="site-container flex flex-col gap-1 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} Eletrocobre · Todos os direitos reservados.</p>
+            <p className="text-muted-foreground/60">CNPJ 65.824.251/0001-36 · Guarulhos, SP</p>
           </div>
         </div>
       </footer>
@@ -156,11 +200,12 @@ export function SiteLayout() {
         href={whatsappLink}
         rel="noreferrer"
         target="_blank"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-copper)] transition-transform hover:-translate-y-0.5"
+        aria-label="Solicitar cotação pelo WhatsApp"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 rounded-full bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-copper)] transition-all hover:-translate-y-1 hover:shadow-[0_28px_80px_-24px_oklch(0.7_0.17_45_/_70%)]"
       >
-        <MessageCircle className="size-4" />
-        WhatsApp
+        <MessageCircle className="size-4 shrink-0" />
+        <span className="hidden sm:inline">Cotar pelo WhatsApp</span>
+        <span className="sm:hidden">Cotar agora</span>
       </a>
     </div>
   );

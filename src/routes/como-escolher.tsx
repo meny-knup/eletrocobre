@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { SITE_URL, howToChooseTopics } from "@/lib/site-data";
+import { OG_IMAGE_URL, SITE_URL, howToChooseTopics } from "@/lib/site-data";
 
 export const Route = createFileRoute("/como-escolher")({
   head: () => ({
@@ -20,13 +19,13 @@ export const Route = createFileRoute("/como-escolher")({
         content:
           "Conteúdo educativo para orientar sua escolha, gerar confiança e acelerar a cotação certa.",
       },
-      { property: "og:image", content: heroImage },
+      { property: "og:image", content: OG_IMAGE_URL },
       { name: "twitter:title", content: "Como escolher cabos elétricos | Eletrocobre" },
       {
         name: "twitter:description",
         content: "Guia prático para escolher o cabo certo e evitar erro na compra.",
       },
-      { name: "twitter:image", content: heroImage },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/como-escolher` }],
   }),

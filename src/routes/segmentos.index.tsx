@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/eletrocobre-hero.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { segmentSummaries, SITE_URL } from "@/lib/site-data";
+import { OG_IMAGE_URL, segmentSummaries, SITE_URL } from "@/lib/site-data";
 
 export const Route = createFileRoute("/segmentos/")({
   head: () => ({
@@ -20,13 +19,13 @@ export const Route = createFileRoute("/segmentos/")({
         content:
           "Soluções por segmento com dores, aplicações e chamadas para orçamento rápido.",
       },
-      { property: "og:image", content: heroImage },
+      { property: "og:image", content: OG_IMAGE_URL },
       { name: "twitter:title", content: "Segmentos atendidos | Eletrocobre" },
       {
         name: "twitter:description",
         content: "Conheça as soluções por segmento atendido pela Eletrocobre.",
       },
-      { name: "twitter:image", content: heroImage },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/segmentos` }],
   }),

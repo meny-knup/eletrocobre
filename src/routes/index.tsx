@@ -11,10 +11,12 @@ import {
   TimerReset,
 } from "lucide-react";
 import heroImage from "@/assets/eletrocobre-hero.jpg";
+import { FeaturedCarousel } from "@/components/site/featured-carousel";
 import { QuoteCta } from "@/components/site/quote-cta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
+  OG_IMAGE_URL,
   SITE_URL,
   WHATSAPP_NUMBER,
   categoryHighlights,
@@ -35,20 +37,22 @@ export const Route = createFileRoute("/")({
         content:
           "Cabos e fios elétricos para construção, indústria, energia solar e revenda com orçamento sob medida e atendimento consultivo.",
       },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: "Eletrocobre | Cabos e fios para orçamento" },
       {
         property: "og:description",
         content:
           "Ganhe agilidade na compra de cabos e fios com suporte consultivo, entrega rápida e atendimento para todo o Brasil.",
       },
-      { property: "og:image", content: heroImage },
+      { property: "og:image", content: OG_IMAGE_URL },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Eletrocobre | Cabos e fios para orçamento" },
       {
         name: "twitter:description",
         content:
           "Cabos e fios para obras, indústria, solar e revenda com foco em conversão e atendimento rápido.",
       },
-      { name: "twitter:image", content: heroImage },
+      { name: "twitter:image", content: OG_IMAGE_URL },
     ],
     links: [{ rel: "canonical", href: SITE_URL }],
   }),
@@ -227,6 +231,12 @@ function HomePage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="site-section border-t border-border/70">
+        <div className="site-container">
+          <FeaturedCarousel />
         </div>
       </section>
 
