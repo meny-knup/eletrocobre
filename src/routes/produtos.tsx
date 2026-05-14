@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImage from "@/assets/eletrocobre-hero.jpg";
-import { ProductCatalog } from "@/components/site/product-catalog";
+import { ProductCatalogMega } from "@/components/site/product-catalog-mega";
 import { SITE_URL } from "@/lib/site-data";
 
 export const Route = createFileRoute("/produtos")({
