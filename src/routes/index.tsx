@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -18,7 +19,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FeaturedCarousel } from "@/components/site/featured-carousel";
+
+const FeaturedCarousel = lazy(() =>
+  import("@/components/site/featured-carousel").then((m) => ({ default: m.FeaturedCarousel }))
+);
 import { QuoteCta } from "@/components/site/quote-cta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -254,10 +258,21 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Featured carousel — movido para cima (posição 4) ── */}
+      {/* ── Featured carousel — lazy loaded (Embla abaixo da dobra) ── */}
       <section className="site-section border-y border-border/70 bg-card/40">
         <div className="site-container">
-          <FeaturedCarousel />
+          <Suspense fallback={
+            <div className="space-y-4">
+              <div className="h-8 w-64 animate-pulse rounded bg-card/60" />
+              <div className="flex gap-4 overflow-hidden">
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div key={i} className="h-64 w-56 shrink-0 animate-pulse rounded-lg bg-card/60" />
+                ))}
+              </div>
+            </div>
+          }>
+            <FeaturedCarousel />
+          </Suspense>
         </div>
       </section>
 

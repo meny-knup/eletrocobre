@@ -215,7 +215,7 @@
     padding-block: clamp(4.5rem, 8vw, 7rem);
   }
 
-  /* Card com material elevado sobre superfície de concreto quente */
+  /* Card com material elevado — sem backdrop-filter (força compositing layer desnecessário) */
   .premium-card {
     border-radius: var(--radius-lg);
     border: 1px solid oklch(0.82 0.014 50 / 75%);
@@ -224,17 +224,17 @@
       0 1px 3px oklch(0 0 0 / 5%),
       0 8px 28px -8px oklch(0.35 0.06 45 / 14%),
       inset 0 1px 0 oklch(1 0 0 / 85%);
-    backdrop-filter: blur(8px);
   }
 
+  /* will-change promove para camada GPU antes do hover — evita jank */
   .lift-card {
+    will-change: transform;
     transition:
       transform 220ms ease,
-      border-color 220ms ease,
-      box-shadow 220ms ease;
+      border-color 220ms ease;
   }
 
-  /* Hover com copper tint quente — não preto frio */
+  /* box-shadow sem transição (paint) — apenas transform e border-color animam */
   .lift-card:hover {
     transform: translateY(-3px);
     border-color: oklch(0.54 0.16 44 / 35%);

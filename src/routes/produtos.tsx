@@ -1,6 +1,10 @@
+import { lazy, Suspense } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ProductCatalogMega } from "@/components/site/product-catalog-mega";
 import { OG_IMAGE_URL, SITE_URL } from "@/lib/site-data";
+
+const ProductCatalogMega = lazy(() =>
+  import("@/components/site/product-catalog-mega").then((m) => ({ default: m.ProductCatalogMega }))
+);
 
 export const Route = createFileRoute("/produtos")({
   head: () => ({
@@ -44,7 +48,18 @@ function ProductsPage() {
       </section>
       <section className="site-section">
         <div className="site-container">
-          <ProductCatalogMega />
+          <Suspense fallback={
+            <div className="space-y-4">
+              <div className="h-12 animate-pulse rounded-lg bg-card/60" />
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div key={i} className="h-64 animate-pulse rounded-lg bg-card/60" />
+                ))}
+              </div>
+            </div>
+          }>
+            <ProductCatalogMega />
+          </Suspense>
         </div>
       </section>
     </div>
