@@ -7,7 +7,6 @@ import {
   Factory,
   MapPin,
   MessageCircle,
-  Package,
   ShieldCheck,
   SunMedium,
   Zap,
@@ -107,7 +106,6 @@ function HomePage() {
               </Button>
             </div>
 
-            {/* Phone + location signal */}
             <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
               <a
                 href={whatsappLink}
@@ -190,7 +188,7 @@ function HomePage() {
                     <span className="flex size-12 items-center justify-center rounded-md bg-primary/12 text-primary">
                       <Icon className="size-5" />
                     </span>
-                    <h3 className="mt-5 font-display text-2xl font-semibold text-foreground">{pillar.title}</h3>
+                    <h3 className="mt-5 font-display text-xl font-semibold text-foreground">{pillar.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">{pillar.description}</p>
                   </CardContent>
                 </Card>
@@ -216,17 +214,16 @@ function HomePage() {
             {howItWorksSteps.map((step, index) => {
               const Icon = stepIcons[index];
               return (
-                <div key={step.step} className="premium-card relative p-6">
-                  <div className="flex items-start gap-4">
-                    <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-primary/12 text-primary">
+                <div key={step.step} className="premium-card space-y-4 p-6">
+                  <div className="space-y-3">
+                    {/* FIX: step number como eyebrow label, não número gigante opaco */}
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{step.step}</p>
+                    <span className="flex size-12 items-center justify-center rounded-md bg-primary/12 text-primary">
                       <Icon className="size-5" />
                     </span>
-                    <span className="font-display text-4xl font-semibold text-foreground/10 leading-none select-none">
-                      {step.step}
-                    </span>
                   </div>
-                  <h3 className="mt-5 font-display text-xl font-semibold text-foreground">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{step.description}</p>
+                  <h3 className="font-display text-xl font-semibold text-foreground">{step.title}</h3>
+                  <p className="text-sm leading-6 text-muted-foreground">{step.description}</p>
                 </div>
               );
             })}
@@ -242,32 +239,32 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Brands strip ── */}
-      <section className="border-y border-border/70 bg-card/40 py-8">
+      {/* ── Featured carousel — movido para cima (posição 4) ── */}
+      <section className="site-section border-y border-border/70 bg-card/40">
         <div className="site-container">
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <p className="text-sm font-medium text-muted-foreground shrink-0">
+          <FeaturedCarousel />
+        </div>
+      </section>
+
+      {/* ── Brands strip — redesign editorial ── */}
+      <section className="site-section">
+        <div className="site-container">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-6">
+            <p className="shrink-0 text-sm font-medium text-muted-foreground">
               Diversas marcas, como:
             </p>
-            <div className="flex flex-wrap items-center gap-2">
-              {featuredBrands.map((brand) => (
-                <span
-                  key={brand}
-                  className="rounded-full border border-border/70 bg-card px-4 py-1.5 text-sm font-semibold text-foreground"
-                >
-                  {brand}
-                </span>
-              ))}
-              <span className="text-sm text-muted-foreground/70 italic pl-1">
+            <p className="font-display text-xl font-semibold text-foreground">
+              {featuredBrands.join(" · ")}
+              <span className="ml-3 font-sans text-sm font-normal italic text-muted-foreground/70">
                 e outras em expansão
               </span>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
       {/* ── Category highlights ── */}
-      <section className="site-section">
+      <section className="site-section border-t border-border/70 bg-card/40">
         <div className="site-container">
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
@@ -289,9 +286,9 @@ function HomePage() {
                     <span className="flex size-12 items-center justify-center rounded-md bg-primary/12 text-primary">
                       <Icon className="size-5" />
                     </span>
-                    <h3 className="mt-5 font-display text-2xl font-semibold text-foreground">{item.title}</h3>
+                    <h3 className="mt-5 font-display text-xl font-semibold text-foreground">{item.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
-                    <p className="mt-4 text-sm font-medium text-foreground">{item.audience}</p>
+                    <p className="mt-4 text-xs font-medium uppercase tracking-[0.1em] text-muted-foreground/70">{item.audience}</p>
                   </CardContent>
                 </Card>
               );
@@ -301,7 +298,7 @@ function HomePage() {
       </section>
 
       {/* ── Differentials ── */}
-      <section className="site-section border-y border-border/70 bg-card/40">
+      <section className="site-section">
         <div className="site-container grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Por que escolher a Eletrocobre</p>
@@ -322,8 +319,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Segments ── */}
-      <section className="site-section">
+      {/* ── Segments — FIX: cards simplificados, menos texto ── */}
+      <section className="site-section border-y border-border/70 bg-card/40">
         <div className="site-container">
           <div className="mb-8 max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Segmentos atendidos</p>
@@ -335,16 +332,18 @@ function HomePage() {
             {segmentSummaries.map((segment) => (
               <Card key={segment.slug} className="lift-card rounded-lg border-border/70 bg-card/70 shadow-none">
                 <CardContent className="flex h-full flex-col p-6">
-                  <h3 className="font-display text-2xl font-semibold text-foreground">{segment.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{segment.description}</p>
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Principais dores</p>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-muted-foreground">
-                    {segment.painPoints.map((pain) => (
-                      <li key={pain}>• {pain}</li>
+                  <h3 className="font-display text-xl font-semibold text-foreground">{segment.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{segment.description}</p>
+                  <ul className="mt-4 space-y-1.5">
+                    {segment.painPoints.slice(0, 2).map((pain) => (
+                      <li key={pain} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary/60" />
+                        {pain}
+                      </li>
                     ))}
                   </ul>
-                  <div className="mt-auto pt-6">
-                    <Button variant="outline" asChild>
+                  <div className="mt-auto pt-5">
+                    <Button variant="outline" size="sm" asChild>
                       <Link to={segment.to}>Ver soluções</Link>
                     </Button>
                   </div>
@@ -355,15 +354,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Featured carousel ── */}
-      <section className="site-section border-t border-border/70">
-        <div className="site-container">
-          <FeaturedCarousel />
-        </div>
-      </section>
-
       {/* ── Testimonials ── */}
-      <section className="site-section border-y border-border/70 bg-card/40">
+      <section className="site-section">
         <div className="site-container">
           <div className="mb-8 max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Depoimentos</p>
@@ -387,8 +379,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className="site-section">
+      {/* ── FAQ — FIX: accordion sem premium-card (conflito de estado) ── */}
+      <section className="site-section border-y border-border/70 bg-card/40">
         <div className="site-container grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Dúvidas frequentes</p>
@@ -396,7 +388,7 @@ function HomePage() {
               Respostas antes de chamar no WhatsApp.
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted-foreground">
-              Não encontrou o que precisava? Nossa equipe responde pelo WhatsApp com agilidade.
+              Não encontrou o que precisava? Nossa equipe responde com agilidade.
             </p>
             <div className="mt-6">
               <Button asChild variant="outline">
@@ -412,9 +404,9 @@ function HomePage() {
               <AccordionItem
                 key={index}
                 value={`faq-${index}`}
-                className="premium-card rounded-lg border-border/70 px-5 data-[state=open]:bg-card/80"
+                className="rounded-lg border border-border/70 bg-card/60 px-5 transition-colors data-[state=open]:bg-card"
               >
-                <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground hover:no-underline">
+                <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground hover:no-underline [&>svg]:shrink-0">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-sm leading-6 text-muted-foreground">
@@ -427,7 +419,7 @@ function HomePage() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="site-section border-t border-border/70 bg-card/40">
+      <section className="site-section">
         <div className="site-container grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Pronto para cotar?</p>
