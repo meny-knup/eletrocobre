@@ -79,22 +79,22 @@ function HomePage() {
     <div>
 
       {/* ── Hero ── */}
-      <section className="site-section overflow-hidden">
-        <div className="site-container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
+      <section className="overflow-hidden px-4 pb-8 pt-6 sm:px-6 lg:px-8 lg:pb-12 lg:pt-10">
+        <div className="mx-auto grid w-full max-w-[1180px] gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="space-y-5">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:text-sm">
                 Distribuidora B2B · Base em Guarulhos, SP
               </p>
-              <h1 className="font-display text-5xl font-semibold leading-[1.02] text-foreground md:text-6xl">
+              <h1 className="font-display text-4xl font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-[3.5rem]">
                 Cabos e fios elétricos com resposta rápida para quem precisa comprar certo.
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-                A Eletrocobre conecta obras, indústrias, projetos solares e revendas a soluções em cabos e fios com suporte consultivo, agilidade comercial e orçamento sob medida.
+              <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+                A Eletrocobre conecta obras, indústrias, projetos solares e revendas a cabos e fios com suporte consultivo e orçamento sob medida.
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-wrap gap-3">
               <Button size="lg" asChild>
                 <Link to="/orcamento">Solicitar orçamento</Link>
               </Button>
@@ -106,46 +106,46 @@ function HomePage() {
               </Button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
-                <MessageCircle className="size-4 text-primary" />
+                <MessageCircle className="size-3.5 text-primary" />
                 {WHATSAPP_DISPLAY}
               </a>
               <span className="flex items-center gap-1.5">
-                <MapPin className="size-4 text-primary/70" />
-                Base em Guarulhos, SP
+                <MapPin className="size-3.5 text-primary/70" />
+                Guarulhos, SP
               </span>
               <Link
                 to="/produtos"
                 className="flex items-center gap-1 text-primary transition-colors hover:text-primary/80"
               >
-                Consultar catálogo
+                Ver catálogo
                 <ArrowRight className="size-3.5" />
               </Link>
             </div>
 
-            <dl className="grid gap-4 sm:grid-cols-3">
-              <div className="premium-card p-4">
-                <dt className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Atendimento</dt>
-                <dd className="mt-2 font-display text-2xl font-semibold">Consultivo</dd>
+            <dl className="grid grid-cols-3 gap-3">
+              <div className="premium-card p-3">
+                <dt className="text-xs uppercase tracking-[0.14em] text-muted-foreground">Atendimento</dt>
+                <dd className="mt-1.5 font-display text-lg font-semibold sm:text-2xl">Consultivo</dd>
               </div>
-              <div className="premium-card p-4">
-                <dt className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Orçamento</dt>
-                <dd className="mt-2 font-display text-2xl font-semibold">Pelo WhatsApp</dd>
+              <div className="premium-card p-3">
+                <dt className="text-xs uppercase tracking-[0.14em] text-muted-foreground">Orçamento</dt>
+                <dd className="mt-1.5 font-display text-lg font-semibold sm:text-2xl">WhatsApp</dd>
               </div>
-              <div className="premium-card p-4">
-                <dt className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Logística</dt>
-                <dd className="mt-2 font-display text-2xl font-semibold">Guarulhos, SP</dd>
+              <div className="premium-card p-3">
+                <dt className="text-xs uppercase tracking-[0.14em] text-muted-foreground">Logística</dt>
+                <dd className="mt-1.5 font-display text-lg font-semibold sm:text-2xl">Guarulhos</dd>
               </div>
             </dl>
           </div>
 
-          <div className="hero-panel relative min-h-[420px] overflow-hidden rounded-lg border border-border/70 p-4 md:min-h-[520px]">
+          <div className="hero-panel relative min-h-[300px] overflow-hidden rounded-lg border border-border/70 p-4 sm:min-h-[380px] lg:min-h-[480px]">
             <img
               src={heroImage}
               alt="Cabos elétricos em composição premium com iluminação cobre"

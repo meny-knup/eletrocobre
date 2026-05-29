@@ -6,21 +6,16 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// On Vercel this site is deployed as a static SPA. TanStack Start writes its
-// client build to dist/client, so we prerender a SPA shell as index.html there
-// and let Vercel rewrite /quote and all other page URLs back to that shell.
-const isVercel = !!process.env.VERCEL;
-
+// SPA mode ativo em todos os ambientes (Vercel + local).
+// Cloudflare Workers mode desativado — evita 404 em navegação direta local.
 export default defineConfig({
-  cloudflare: isVercel ? false : undefined,
-  tanstackStart: isVercel
-    ? {
-        spa: {
-          enabled: true,
-          prerender: {
-            outputPath: "/index",
-          },
-        },
-      }
-    : undefined,
+  cloudflare: false,
+  tanstackStart: {
+    spa: {
+      enabled: true,
+      prerender: {
+        outputPath: "/index",
+      },
+    },
+  },
 });
