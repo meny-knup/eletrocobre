@@ -1,9 +1,10 @@
 import { ProductCard } from "@/components/site/product-card";
 import type { Product } from "@/data/products";
+import { cn } from "@/lib/utils";
 
-type Props = { products: Product[] };
+type Props = { products: Product[]; sidebar?: boolean };
 
-export function ProductGrid({ products }: Props) {
+export function ProductGrid({ products, sidebar }: Props) {
   if (products.length === 0) {
     return (
       <div className="premium-card p-8 text-center">
@@ -18,7 +19,14 @@ export function ProductGrid({ products }: Props) {
   }
 
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div
+      className={cn(
+        "grid gap-4",
+        sidebar
+          ? "grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
+          : "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+      )}
+    >
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
