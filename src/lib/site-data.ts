@@ -26,18 +26,20 @@ export const navItems = [
   { label: "Sobre", to: "/sobre" as const },
 ];
 
+export const WHATSAPP_DISPLAY = "+55 11 91494-5464";
+
 export const trustPillars = [
   {
-    title: "Qualidade garantida",
-    description: "Cabos e fios para obras, indústrias e instalações que exigem padrão técnico confiável.",
+    title: "Diversas marcas reconhecidas",
+    description: "Trabalhamos com Cobrecom, SIL, Cabomaq e outras marcas em expansão. Produto com procedência, especificação correta e disponibilidade real.",
   },
   {
-    title: "Entrega rápida",
-    description: "Atendimento para todo o Brasil com foco em agilidade comercial e previsibilidade de prazo.",
+    title: "Guarulhos, SP — entrega nacional",
+    description: "Base logística próxima às principais rodovias e ao maior aeroporto de cargas do país. Enviamos para obras e indústrias em qualquer estado.",
   },
   {
-    title: "Suporte técnico",
-    description: "Orientação consultiva para especificar o material certo e evitar compra errada.",
+    title: "Atendimento antes da cotação",
+    description: "Nosso time entende a aplicação antes de enviar o orçamento — isso evita cabo errado, retrabalho e atraso no seu projeto.",
   },
 ];
 
@@ -251,6 +253,49 @@ export const guidedSelectorOptions: Array<{ value: ProductSegment; label: string
     value: "maquinas",
     label: "Máquinas",
     description: "Automação, comandos e alimentação de equipamentos.",
+  },
+];
+
+export const howItWorksSteps = [
+  {
+    step: "01",
+    title: "Encontre o produto",
+    description: "Use o catálogo com filtros por tipo, tensão e bitola, ou descreva diretamente pelo WhatsApp o que a aplicação exige.",
+  },
+  {
+    step: "02",
+    title: "Solicite a cotação",
+    description: "Informe produto, volume aproximado e cidade de entrega. Nossa equipe orienta a especificação antes de enviar a proposta.",
+  },
+  {
+    step: "03",
+    title: "Receba resposta ágil",
+    description: "Retornamos com orçamento, prazo de entrega e suporte técnico. Tudo direto no WhatsApp, sem burocracia.",
+  },
+];
+
+export const featuredBrands = ["Cobrecom", "SIL", "Cabomaq"];
+
+export const faqItems = [
+  {
+    question: "Como funciona o processo de cotação?",
+    answer: "Chame pelo WhatsApp com o produto, bitola e volume aproximado. Nossa equipe retorna com o orçamento, prazo de entrega e, se necessário, indica o material mais adequado para a aplicação.",
+  },
+  {
+    question: "Vocês entregam para todo o Brasil?",
+    answer: "Sim. Com base em Guarulhos (SP), atendemos obras, indústrias, instaladores e revendas em qualquer estado. Nossa localização próxima às principais rodovias e ao aeroporto de cargas de Guarulhos viabiliza prazos ágeis para todo o país.",
+  },
+  {
+    question: "Os produtos são vendidos por metro ou em comprimento fixo?",
+    answer: "Depende do produto. Cabos flexíveis Cobrecom são vendidos por metro, ideal para quem precisa de quantidades exatas. Produtos SIL vêm em comprimentos fixos (10m, 15m, 25m, 50m e 100m). Consulte o catálogo para ver os detalhes de cada item.",
+  },
+  {
+    question: "Como funciona o atendimento consultivo?",
+    answer: "Antes de qualquer cotação, nosso time entende a aplicação real — tipo de instalação, ambiente de uso, tensão e bitola necessária. Isso garante que o material especificado seja o correto, evitando retrabalho, custo extra e atraso na obra ou projeto.",
+  },
+  {
+    question: "Quais segmentos vocês atendem?",
+    answer: "Atendemos construção civil, indústrias, instaladores de energia solar, fabricantes de máquinas e revendas regionais. O atendimento é estruturado por segmento, com portfólio e condições adaptadas a cada tipo de operação.",
   },
 ];
 
