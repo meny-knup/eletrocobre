@@ -38,7 +38,7 @@ function ProductsPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Catálogo inteligente</p>
           <h1 className="mt-3 font-display text-5xl font-semibold text-foreground">Encontre o cabo certo com mais rapidez.</h1>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Use filtros por tensão, aplicação, tipo e bitola, ou comece pela seleção guiada para descobrir as opções mais adequadas ao seu projeto.
+            Filtre por categoria — flexíveis, solares, controle, PP — ou busque pelo nome ou bitola para localizar o produto certo e solicitar cotação direto pelo WhatsApp.
           </p>
         </div>
       </section>
