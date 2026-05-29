@@ -106,26 +106,26 @@ function HomePage() {
               </Button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+            <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-1.5">
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
-                <MessageCircle className="size-3.5 text-primary" />
-                {WHATSAPP_DISPLAY}
+                <MessageCircle className="size-3.5 shrink-0 text-primary" />
+                <span>{WHATSAPP_DISPLAY}</span>
               </a>
               <span className="flex items-center gap-1.5">
-                <MapPin className="size-3.5 text-primary/70" />
-                Guarulhos, SP
+                <MapPin className="size-3.5 shrink-0 text-primary/70" />
+                <span>Guarulhos, SP</span>
               </span>
               <Link
                 to="/produtos"
                 className="flex items-center gap-1 text-primary transition-colors hover:text-primary/80"
               >
                 Ver catálogo
-                <ArrowRight className="size-3.5" />
+                <ArrowRight className="size-3.5 shrink-0" />
               </Link>
             </div>
 
@@ -190,6 +190,21 @@ function HomePage() {
                     </span>
                     <h3 className="mt-5 font-display text-xl font-semibold text-foreground">{pillar.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">{pillar.description}</p>
+                    {index === 0 && (
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {featuredBrands.map((brand) => (
+                          <span
+                            key={brand}
+                            className="rounded-full border border-border/70 bg-background/60 px-3 py-1 text-xs font-semibold text-foreground"
+                          >
+                            {brand}
+                          </span>
+                        ))}
+                        <span className="rounded-full border border-border/40 px-3 py-1 text-xs italic text-muted-foreground/60">
+                          + outras
+                        </span>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               );
@@ -243,23 +258,6 @@ function HomePage() {
       <section className="site-section border-y border-border/70 bg-card/40">
         <div className="site-container">
           <FeaturedCarousel />
-        </div>
-      </section>
-
-      {/* ── Brands strip — redesign editorial ── */}
-      <section className="site-section">
-        <div className="site-container">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:gap-6">
-            <p className="shrink-0 text-sm font-medium text-muted-foreground">
-              Diversas marcas, como:
-            </p>
-            <p className="font-display text-xl font-semibold text-foreground">
-              {featuredBrands.join(" · ")}
-              <span className="ml-3 font-sans text-sm font-normal italic text-muted-foreground/70">
-                e outras em expansão
-              </span>
-            </p>
-          </div>
         </div>
       </section>
 
