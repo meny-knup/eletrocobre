@@ -7,6 +7,9 @@ export type Product = {
   originalLink: string;
   sku?: string;
   productType?: string;
+  brand?: string;
+  voltage?: string;
+  gauge?: string;
 };
 
 import { WHATSAPP_NUMBER } from "@/lib/site-data";
@@ -14,12 +17,14 @@ import { WHATSAPP_NUMBER } from "@/lib/site-data";
 export { WHATSAPP_NUMBER };
 
 export const products: Product[] = [
+  // ── Cabos Flexíveis 750V (Cobrecom) ──────────────────────────────────
   {
     id: "9355",
     name: "Cabo 4mm Cobre Flexível 750V Metro Cobrecom Fio Elétrico",
     category: "Cabos Flexíveis 750V",
     image: "/products/9355.webp",
     originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-4mm-750v-por-metro/",
+    brand: "Cobrecom", voltage: "750V", gauge: "4mm",
   },
   {
     id: "9291",
@@ -27,6 +32,7 @@ export const products: Product[] = [
     category: "Cabos Flexíveis 750V",
     image: "/products/9291.webp",
     originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-6mm-750v-por-metro/",
+    brand: "Cobrecom", voltage: "750V", gauge: "6mm",
   },
   {
     id: "9382",
@@ -34,6 +40,7 @@ export const products: Product[] = [
     category: "Cabos Flexíveis 750V",
     image: "/products/9382.webp",
     originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-10mm-750v-por-metro/",
+    brand: "Cobrecom", voltage: "750V", gauge: "10mm",
   },
   {
     id: "9345",
@@ -41,6 +48,7 @@ export const products: Product[] = [
     category: "Cabos Flexíveis 750V",
     image: "/products/9345.webp",
     originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-25mm-750v-por-metro/",
+    brand: "Cobrecom", voltage: "750V", gauge: "2,5mm",
   },
   {
     id: "9388",
@@ -48,7 +56,52 @@ export const products: Product[] = [
     category: "Cabos Flexíveis 750V",
     image: "/products/9388.webp",
     originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-16mm-750v-por-metro/",
+    brand: "Cobrecom", voltage: "750V", gauge: "16mm",
   },
+  {
+    id: "9317",
+    name: "Cabo 1,5mm Cobre Flexível 750V Metro Cobrecom Fio Elétrico",
+    category: "Cabos Flexíveis 750V",
+    image: "/products/9317.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-15mm-750v-por-metro/",
+    brand: "Cobrecom", voltage: "750V", gauge: "1,5mm",
+  },
+  {
+    id: "9399",
+    name: "Cabo 25mm Cobre Flexível 750V Metro Cobrecom Fio Elétrico",
+    category: "Cabos Flexíveis 750V",
+    image: "/products/9399.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-25mm-750v-por-metro-2/",
+    brand: "Cobrecom", voltage: "750V", gauge: "25mm+",
+  },
+  {
+    id: "9073",
+    name: "Cabo 2,5mm 100 Metros Cobre Flexível 750V Cobrecom Fio Elétrico",
+    category: "Cabos Flexíveis 750V",
+    image: "/products/9073.webp",
+    hoverImage: "/products/9073-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-2-5mm-750v-100m/",
+    brand: "Cobrecom", voltage: "750V", gauge: "2,5mm",
+  },
+  {
+    id: "9036",
+    name: "Cabo 1,5mm 100 Metros Cobre Flexível 750V Cobrecom Fio Elétrico",
+    category: "Cabos Flexíveis 750V",
+    image: "/products/9036.webp",
+    hoverImage: "/products/9036-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-15mm-750v-100m/",
+    brand: "Cobrecom", voltage: "750V", gauge: "1,5mm",
+  },
+  {
+    id: "9100",
+    name: "Cabo 6mm 100 Metros Cobre Flexível 750V Cobrecom Fio Elétrico",
+    category: "Cabos Flexíveis 750V",
+    image: "/products/9100.webp",
+    hoverImage: "/products/9100-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-6mm-750v-100m/",
+    brand: "Cobrecom", voltage: "750V", gauge: "6mm",
+  },
+  // ── Cabos PP HEPR 1kV (Cobrecom) ─────────────────────────────────────
   {
     id: "9479",
     name: "Cabo 3x4mm PP HEPR 0,6/1Kv 90° Fio Elétrico Flexível Por Metro",
@@ -57,13 +110,7 @@ export const products: Product[] = [
     hoverImage: "/products/9479-hover.webp",
     originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-3x4mm-hepr-1kv-por-metro/",
     sku: "7899674706751",
-  },
-  {
-    id: "9317",
-    name: "Cabo 1,5mm Cobre Flexível 750V Metro Cobrecom Fio Elétrico",
-    category: "Cabos Flexíveis 750V",
-    image: "/products/9317.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-15mm-750v-por-metro/",
+    brand: "Cobrecom", voltage: "1kV", gauge: "4mm",
   },
   {
     id: "12888",
@@ -73,38 +120,7 @@ export const products: Product[] = [
     hoverImage: "/products/12888-hover.webp",
     originalLink: "https://megacobre.com.br/produto/cabo-pp-3x6mm-1kv-por-metro/",
     sku: "7899674706690",
-  },
-  {
-    id: "9073",
-    name: "Cabo 2,5mm 100 Metros Cobre Flexível 750V Cobrecom Fio Elétrico",
-    category: "Cabos Flexíveis 750V",
-    image: "/products/9073.webp",
-    hoverImage: "/products/9073-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-2-5mm-750v-100m/",
-  },
-  {
-    id: "9439",
-    name: "Cabo 3×2,50mm PP 500V Fio Elétrico Flexível Por Metro",
-    category: "Cabos PP 500V",
-    image: "/products/9439.webp",
-    hoverImage: "/products/9439-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-3x250mm-500v-por-metro/",
-    sku: "7899674706683",
-  },
-  {
-    id: "9399",
-    name: "Cabo 25mm Cobre Flexível 750V Metro Cobrecom Fio Elétrico",
-    category: "Cabos Flexíveis 750V",
-    image: "/products/9399.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-25mm-750v-por-metro-2/",
-  },
-  {
-    id: "9036",
-    name: "Cabo 1,5mm 100 Metros Cobre Flexível 750V Cobrecom Fio Elétrico",
-    category: "Cabos Flexíveis 750V",
-    image: "/products/9036.webp",
-    hoverImage: "/products/9036-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-15mm-750v-100m/",
+    brand: "Cobrecom", voltage: "1kV", gauge: "6mm",
   },
   {
     id: "14030",
@@ -113,6 +129,7 @@ export const products: Product[] = [
     image: "/products/14030.webp",
     originalLink: "https://megacobre.com.br/produto/cabo-pp-5x150mm-1kv-cobrecom-por-metro/",
     sku: "7899674743688",
+    brand: "Cobrecom", voltage: "1kV", gauge: "1,5mm",
   },
   {
     id: "12878",
@@ -122,85 +139,7 @@ export const products: Product[] = [
     hoverImage: "/products/12878-hover.webp",
     originalLink: "https://megacobre.com.br/produto/cabo-pp-5x250mm-1kv-por-metro/",
     sku: "7899674741691",
-  },
-  {
-    id: "15111",
-    name: "Fio Cabo 2×2,50mm Paralelo 300V Cordão Elétrico Flexível Por Metro",
-    category: "Cabos Paralelos",
-    image: "/products/15111.webp",
-    hoverImage: "/products/15111-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/cordao-paralelo-2x250mm-por-metro/",
-    sku: "2010000006320",
-  },
-  {
-    id: "9434",
-    name: "Cabo 3×1,50mm PP 500V Fio Elétrico Flexível Por Metro",
-    category: "Cabos PP 500V",
-    image: "/products/9434.webp",
-    hoverImage: "/products/9434-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-3x150mm-500v-por-metro/",
-    sku: "7899674706607",
-  },
-  {
-    id: "9442",
-    name: "Cabo 4×1,50mm PP 500V Fio Elétrico Flexível Por Metro",
-    category: "Cabos PP 500V",
-    image: "/products/9442.webp",
-    hoverImage: "/products/9442-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-4x150mm-500v-por-metro/",
-    sku: "7899674707246",
-  },
-  {
-    id: "9421",
-    name: "Cabo 2×1,0mm PP 500V Fio Elétrico Flexível Por Metro",
-    category: "Cabos PP 500V",
-    image: "/products/9421.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-2x10mm-500v-por-metro/",
-    sku: "7899674707840",
-  },
-  {
-    id: "9100",
-    name: "Cabo 6mm 100 Metros Cobre Flexível 750V Cobrecom Fio Elétrico",
-    category: "Cabos Flexíveis 750V",
-    image: "/products/9100.webp",
-    hoverImage: "/products/9100-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-eletrico-6mm-750v-100m/",
-  },
-  {
-    id: "9424",
-    name: "Cabo 2×1,50mm PP 500V Fio Elétrico Flexível Por Metro",
-    category: "Cabos PP 500V",
-    image: "/products/9424.webp",
-    hoverImage: "/products/9424-hover.webp",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-2x150mm-500v-por-metro/",
-    sku: "7899674706911",
-  },
-  {
-    id: "9446",
-    name: "Cabo 4×2,50mm PP 500V Fio Elétrico Flexível Por Metro",
-    category: "Cabos PP 500V",
-    image: "",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-4x250mm-500v-por-metro/",
-    sku: "7899674707475",
-    productType: "simple",
-  },
-  {
-    id: "9408",
-    name: "Cabo 2×0,75mm PP 500V Fio Elétrico Flexível Por Metro",
-    category: "Cabos PP 500V",
-    image: "",
-    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-2x075mm-500v-por-metro/",
-    sku: "7899674709578",
-    productType: "simple",
-  },
-  {
-    id: "11645",
-    name: "Cabo 2x6mm PP 500V Fio Elétrico Flexível",
-    category: "Cabos PP 500V",
-    image: "/products/11645.webp",
-    originalLink: "https://megacobre.com.br/produto/cabo-flexivel-pp-2x6mm-500v/",
-    sku: "7895515032713",
-    productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "2,5mm",
   },
   {
     id: "11898",
@@ -210,6 +149,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x35mm-1kv/",
     sku: "7895515133113",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "25mm+",
   },
   {
     id: "11906",
@@ -219,6 +159,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-4x16mm-1kv/",
     sku: "7895515134097",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "16mm",
   },
   {
     id: "11915",
@@ -228,6 +169,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-5x10mm-1kv/",
     sku: "7895515135087",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "10mm",
   },
   {
     id: "11912",
@@ -237,6 +179,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-4x35mm-1kv/",
     sku: "7895515134769",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "25mm+",
   },
   {
     id: "11896",
@@ -246,6 +189,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x16mm-1kv/",
     sku: "7895515132789",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "16mm",
   },
   {
     id: "11902",
@@ -255,6 +199,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x25mm-1kv/",
     sku: "7895515132949",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "25mm+",
   },
   {
     id: "11890",
@@ -264,6 +209,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x10mm-1kv/",
     sku: "7895515132628",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "10mm",
   },
   {
     id: "11918",
@@ -273,6 +219,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-5x16mm-1kv/",
     sku: "7895515135254",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "16mm",
   },
   {
     id: "11921",
@@ -282,6 +229,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-5x25mm-1kv/",
     sku: "7895515135414",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "25mm+",
   },
   {
     id: "11924",
@@ -291,6 +239,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-5x35mm-1kv/",
     sku: "7895515135575",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "25mm+",
   },
   {
     id: "11909",
@@ -300,6 +249,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-4x25mm-1kv/",
     sku: "7895515134424",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "25mm+",
   },
   {
     id: "11887",
@@ -309,6 +259,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x6mm-1kv/",
     sku: "7895515132468",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "6mm",
   },
   {
     id: "11884",
@@ -318,6 +269,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x4mm-1kv/",
     sku: "7895515132307",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "4mm",
   },
   {
     id: "11881",
@@ -327,6 +279,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x25mm-1kv-hepr/",
     sku: "7895515132147",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "2,5mm",
   },
   {
     id: "11878",
@@ -336,6 +289,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-3x15mm-1kv/",
     sku: "7895515131980",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "1,5mm",
   },
   {
     id: "11875",
@@ -345,6 +299,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-2x6mm-1kv/",
     sku: "7895515131829",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "6mm",
   },
   {
     id: "11872",
@@ -354,8 +309,100 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-multipolar-2x4mm-1kv/",
     sku: "7895515131669",
     productType: "external",
+    brand: "Cobrecom", voltage: "1kV", gauge: "4mm",
   },
-  // ── Cabos Solares ────────────────────────────────────────────────────
+  // ── Cabos PP 500V (Cobrecom) ──────────────────────────────────────────
+  {
+    id: "9439",
+    name: "Cabo 3×2,50mm PP 500V Fio Elétrico Flexível Por Metro",
+    category: "Cabos PP 500V",
+    image: "/products/9439.webp",
+    hoverImage: "/products/9439-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-3x250mm-500v-por-metro/",
+    sku: "7899674706683",
+    brand: "Cobrecom", voltage: "500V", gauge: "2,5mm",
+  },
+  {
+    id: "9434",
+    name: "Cabo 3×1,50mm PP 500V Fio Elétrico Flexível Por Metro",
+    category: "Cabos PP 500V",
+    image: "/products/9434.webp",
+    hoverImage: "/products/9434-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-3x150mm-500v-por-metro/",
+    sku: "7899674706607",
+    brand: "Cobrecom", voltage: "500V", gauge: "1,5mm",
+  },
+  {
+    id: "9442",
+    name: "Cabo 4×1,50mm PP 500V Fio Elétrico Flexível Por Metro",
+    category: "Cabos PP 500V",
+    image: "/products/9442.webp",
+    hoverImage: "/products/9442-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-4x150mm-500v-por-metro/",
+    sku: "7899674707246",
+    brand: "Cobrecom", voltage: "500V", gauge: "1,5mm",
+  },
+  {
+    id: "9421",
+    name: "Cabo 2×1,0mm PP 500V Fio Elétrico Flexível Por Metro",
+    category: "Cabos PP 500V",
+    image: "/products/9421.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-2x10mm-500v-por-metro/",
+    sku: "7899674707840",
+    brand: "Cobrecom", voltage: "500V", gauge: "1mm",
+  },
+  {
+    id: "9424",
+    name: "Cabo 2×1,50mm PP 500V Fio Elétrico Flexível Por Metro",
+    category: "Cabos PP 500V",
+    image: "/products/9424.webp",
+    hoverImage: "/products/9424-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-2x150mm-500v-por-metro/",
+    sku: "7899674706911",
+    brand: "Cobrecom", voltage: "500V", gauge: "1,5mm",
+  },
+  {
+    id: "9446",
+    name: "Cabo 4×2,50mm PP 500V Fio Elétrico Flexível Por Metro",
+    category: "Cabos PP 500V",
+    image: "",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-4x250mm-500v-por-metro/",
+    sku: "7899674707475",
+    productType: "simple",
+    brand: "Cobrecom", voltage: "500V", gauge: "2,5mm",
+  },
+  {
+    id: "9408",
+    name: "Cabo 2×0,75mm PP 500V Fio Elétrico Flexível Por Metro",
+    category: "Cabos PP 500V",
+    image: "",
+    originalLink: "https://megacobre.com.br/produto/fio-cabo-pp-2x075mm-500v-por-metro/",
+    sku: "7899674709578",
+    productType: "simple",
+    brand: "Cobrecom", voltage: "500V", gauge: "0,75mm",
+  },
+  {
+    id: "11645",
+    name: "Cabo 2x6mm PP 500V Fio Elétrico Flexível",
+    category: "Cabos PP 500V",
+    image: "/products/11645.webp",
+    originalLink: "https://megacobre.com.br/produto/cabo-flexivel-pp-2x6mm-500v/",
+    sku: "7895515032713",
+    productType: "external",
+    brand: "Cobrecom", voltage: "500V", gauge: "6mm",
+  },
+  // ── Cabos Paralelos (Cobrecom) ────────────────────────────────────────
+  {
+    id: "15111",
+    name: "Fio Cabo 2×2,50mm Paralelo 300V Cordão Elétrico Flexível Por Metro",
+    category: "Cabos Paralelos",
+    image: "/products/15111.webp",
+    hoverImage: "/products/15111-hover.webp",
+    originalLink: "https://megacobre.com.br/produto/cordao-paralelo-2x250mm-por-metro/",
+    sku: "2010000006320",
+    brand: "Cobrecom", voltage: "300V", gauge: "2,5mm",
+  },
+  // ── Cabos Solares (Cabomaq) ───────────────────────────────────────────
   {
     id: "solar-4mm",
     name: "Cabo 4mm Solar Fotovoltaico 0,9/1,8kV Fio Elétrico",
@@ -364,6 +411,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-eletrico-4mm-solar-09-18kv/",
     sku: "7895515220615",
     productType: "external",
+    brand: "Cabomaq", voltage: "1,8kV", gauge: "4mm",
   },
   {
     id: "solar-6mm",
@@ -373,8 +421,9 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-eletrico-6mm-solar-09-18kv/",
     sku: "7895515220714",
     productType: "external",
+    brand: "Cabomaq", voltage: "1,8kV", gauge: "6mm",
   },
-  // ── Cabos de Controle ────────────────────────────────────────────────
+  // ── Cabos de Controle (Cabomaq) ───────────────────────────────────────
   {
     id: "controle-5x150",
     name: "Cabo 5×1,50mm de Controle e Comando 0,6/1kV",
@@ -383,6 +432,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-de-comando-controle-5x150mm/",
     sku: "7895515090546",
     productType: "external",
+    brand: "Cabomaq", voltage: "1kV", gauge: "1,5mm",
   },
   {
     id: "controle-7x150",
@@ -392,6 +442,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-de-comando-controle-7x150mm/",
     sku: "7895515090744",
     productType: "external",
+    brand: "Cabomaq", voltage: "1kV", gauge: "1,5mm",
   },
   {
     id: "controle-10x150",
@@ -401,6 +452,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-de-comando-controle-10x150mm/",
     sku: "7895515091048",
     productType: "external",
+    brand: "Cabomaq", voltage: "1kV", gauge: "1,5mm",
   },
   {
     id: "controle-12x150",
@@ -410,6 +462,7 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-de-comando-controle-12x150mm/",
     sku: "7895515091246",
     productType: "external",
+    brand: "Cabomaq", voltage: "1kV", gauge: "1,5mm",
   },
   {
     id: "controle-14x250",
@@ -419,8 +472,9 @@ export const products: Product[] = [
     originalLink: "https://megacobre.com.br/produto/cabo-de-comando-controle-14x250mm/",
     sku: "7895515091451",
     productType: "external",
+    brand: "Cabomaq", voltage: "1kV", gauge: "2,5mm",
   },
-  // ── Cabos Flexíveis SIL 750V ─────────────────────────────────────────
+  // ── Cabos Flexíveis SIL 750V ──────────────────────────────────────────
   {
     id: "sil-89130853",
     name: "Cabo Flexível 2,5mm 50m Amarelo 750V SIL",
@@ -428,6 +482,7 @@ export const products: Product[] = [
     image: "/products/sil-89130853.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-2,5mm-50m-amarelo-750v-sil_89130853",
     sku: "89130853",
+    brand: "SIL", voltage: "750V", gauge: "2,5mm",
   },
   {
     id: "sil-89194420",
@@ -436,6 +491,7 @@ export const products: Product[] = [
     image: "/products/sil-89194420.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-50m-vermelho-750v-sil_89194420",
     sku: "89194420",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-86839634",
@@ -444,6 +500,7 @@ export const products: Product[] = [
     image: "/products/sil-86839634.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-1,5mm-100m-verde-750v-sil_86839634",
     sku: "86839634",
+    brand: "SIL", voltage: "750V", gauge: "1,5mm",
   },
   {
     id: "sil-86840544",
@@ -452,6 +509,7 @@ export const products: Product[] = [
     image: "/products/sil-86840544.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-50m-verde-750v-sil_86840544",
     sku: "86840544",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-86840572",
@@ -460,6 +518,7 @@ export const products: Product[] = [
     image: "/products/sil-86840572.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-50m-verde-750v-sil_86840572",
     sku: "86840572",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-91998116",
@@ -468,6 +527,7 @@ export const products: Product[] = [
     image: "/products/sil-91998116.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-10mm-25m-verde-750v-sil_91998116",
     sku: "91998116",
+    brand: "SIL", voltage: "750V", gauge: "10mm",
   },
   {
     id: "sil-90029275",
@@ -476,6 +536,7 @@ export const products: Product[] = [
     image: "/products/sil-90029275.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-2,5mm-25m-azul-750v-sil_90029275",
     sku: "90029275",
+    brand: "SIL", voltage: "750V", gauge: "2,5mm",
   },
   {
     id: "sil-91921011",
@@ -484,6 +545,7 @@ export const products: Product[] = [
     image: "/products/sil-91921011.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-1,5mm-50m-amarelo-750v-sil_91921011",
     sku: "91921011",
+    brand: "SIL", voltage: "750V", gauge: "1,5mm",
   },
   {
     id: "sil-86840446",
@@ -492,6 +554,7 @@ export const products: Product[] = [
     image: "/products/sil-86840446.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-1,5mm-50m-verde-750v-sil_86840446",
     sku: "86840446",
+    brand: "SIL", voltage: "750V", gauge: "1,5mm",
   },
   {
     id: "sil-86840523",
@@ -500,6 +563,7 @@ export const products: Product[] = [
     image: "/products/sil-86840523.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-50m-branco-750v-sil_86840523",
     sku: "86840523",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-89194434",
@@ -508,6 +572,7 @@ export const products: Product[] = [
     image: "/products/sil-89194434.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-50m-branco-750v-sil_89194434",
     sku: "89194434",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-90005986",
@@ -516,6 +581,7 @@ export const products: Product[] = [
     image: "/products/sil-90005986.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-25m-azul-750v-sil_90005986",
     sku: "90005986",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90006210",
@@ -524,6 +590,7 @@ export const products: Product[] = [
     image: "/products/sil-90006210.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-25m-verde-750v-sil_90006210",
     sku: "90006210",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-90029282",
@@ -532,6 +599,7 @@ export const products: Product[] = [
     image: "/products/sil-90029282.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-2,5mm-25m-vermelho-750v-sil_90029282",
     sku: "90029282",
+    brand: "SIL", voltage: "750V", gauge: "2,5mm",
   },
   {
     id: "sil-90006280",
@@ -540,6 +608,7 @@ export const products: Product[] = [
     image: "/products/sil-90006280.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-10m-verde-750v-sil_90006280",
     sku: "90006280",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-90029261",
@@ -548,6 +617,7 @@ export const products: Product[] = [
     image: "/products/sil-90029261.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-2,5mm-25m-branco-750v-sil_90029261",
     sku: "90029261",
+    brand: "SIL", voltage: "750V", gauge: "2,5mm",
   },
   {
     id: "sil-90005993",
@@ -556,6 +626,7 @@ export const products: Product[] = [
     image: "/products/sil-90005993.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-25m-vermelho-750v-sil_90005993",
     sku: "90005993",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90006266",
@@ -564,6 +635,7 @@ export const products: Product[] = [
     image: "/products/sil-90006266.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-10m-azul-750v-sil_90006266",
     sku: "90006266",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-90029051",
@@ -572,6 +644,7 @@ export const products: Product[] = [
     image: "/products/sil-90029051.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-1,5mm-25m-branco-750v-sil_90029051",
     sku: "90029051",
+    brand: "SIL", voltage: "750V", gauge: "1,5mm",
   },
   {
     id: "sil-90006182",
@@ -580,6 +653,7 @@ export const products: Product[] = [
     image: "/products/sil-90006182.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-25m-branco-750v-sil_90006182",
     sku: "90006182",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-90006252",
@@ -588,6 +662,7 @@ export const products: Product[] = [
     image: "/products/sil-90006252.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-10m-branco-750v-sil_90006252",
     sku: "90006252",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-90006035",
@@ -596,6 +671,7 @@ export const products: Product[] = [
     image: "/products/sil-90006035.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-10m-preto-750v-sil_90006035",
     sku: "90006035",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90029072",
@@ -604,6 +680,7 @@ export const products: Product[] = [
     image: "/products/sil-90029072.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-1,5mm-25m-vermelho-750v-sil_90029072",
     sku: "90029072",
+    brand: "SIL", voltage: "750V", gauge: "1,5mm",
   },
   {
     id: "sil-90006021",
@@ -612,6 +689,7 @@ export const products: Product[] = [
     image: "/products/sil-90006021.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-25m-verde-e-amarelo-750v-sil_90006021",
     sku: "90006021",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90029226",
@@ -620,6 +698,7 @@ export const products: Product[] = [
     image: "/products/sil-90029226.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-2,5mm-15m-verde-750v-sil_90029226",
     sku: "90029226",
+    brand: "SIL", voltage: "750V", gauge: "2,5mm",
   },
   {
     id: "sil-90029170",
@@ -628,6 +707,7 @@ export const products: Product[] = [
     image: "/products/sil-90029170.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-1,5mm-10m-verde-e-amarelo-750v-sil_90029170",
     sku: "90029170",
+    brand: "SIL", voltage: "750V", gauge: "1,5mm",
   },
   {
     id: "sil-90006105",
@@ -636,6 +716,7 @@ export const products: Product[] = [
     image: "/products/sil-90006105.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-15m-preto-750v-sil_90006105",
     sku: "90006105",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
   {
     id: "sil-90006070",
@@ -644,6 +725,7 @@ export const products: Product[] = [
     image: "/products/sil-90006070.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-10m-verde-750v-sil_90006070",
     sku: "90006070",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90006056",
@@ -652,6 +734,7 @@ export const products: Product[] = [
     image: "/products/sil-90006056.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-10m-azul-750v-sil_90006056",
     sku: "90006056",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90005972",
@@ -660,6 +743,7 @@ export const products: Product[] = [
     image: "/products/sil-90005972.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-25m-branco-750v-sil_90005972",
     sku: "90005972",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90029212",
@@ -668,6 +752,7 @@ export const products: Product[] = [
     image: "/products/sil-90029212.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-2,5mm-15m-vermelho-750v-sil_90029212",
     sku: "90029212",
+    brand: "SIL", voltage: "750V", gauge: "2,5mm",
   },
   {
     id: "sil-90006042",
@@ -676,6 +761,7 @@ export const products: Product[] = [
     image: "/products/sil-90006042.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-10m-branco-750v-sil_90006042",
     sku: "90006042",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90006014",
@@ -684,6 +770,7 @@ export const products: Product[] = [
     image: "/products/sil-90006014.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-25m-amarelo-750v-sil_90006014",
     sku: "90006014",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90005930",
@@ -692,6 +779,7 @@ export const products: Product[] = [
     image: "/products/sil-90005930.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-4mm-15m-verde-750v-sil_90005930",
     sku: "90005930",
+    brand: "SIL", voltage: "750V", gauge: "4mm",
   },
   {
     id: "sil-90029016",
@@ -700,6 +788,7 @@ export const products: Product[] = [
     image: "/products/sil-90029016.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-1,5mm-15m-verde-750v-sil_90029016",
     sku: "90029016",
+    brand: "SIL", voltage: "750V", gauge: "1,5mm",
   },
   {
     id: "sil-90006112",
@@ -708,6 +797,7 @@ export const products: Product[] = [
     image: "/products/sil-90006112.jpg",
     originalLink: "https://www.leroymerlin.com.br/cabo-flexivel-6mm-15m-branco-750v-sil_90006112",
     sku: "90006112",
+    brand: "SIL", voltage: "750V", gauge: "6mm",
   },
 ];
 

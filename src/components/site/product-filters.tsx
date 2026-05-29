@@ -1,49 +1,95 @@
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Props = {
-  categories: string[];
-  active: string | null;
-  onChange: (category: string | null) => void;
-  counts?: Record<string, number>;
-  totalCount?: number;
+export type FilterValue = string | null;
+
+export type FilterGroup = {
+  key: string;
+  label: string;
+  options: { value: string; label: string; count: number }[];
+  active: FilterValue;
+  onChange: (value: FilterValue) => void;
 };
 
-export function ProductFilters({ categories, active, onChange, counts, totalCount }: Props) {
+type Props = {
+  groups: FilterGroup[];
+  totalCount: number;
+  filteredCount: number;
+  onClear: () => void;
+};
+
+export function ProductFilters({ groups, totalCount, filteredCount, onClear }: Props) {
+  const hasActive = groups.some((g) => g.active !== null);
+
   return (
-    <div className="flex flex-wrap gap-2">
-      <button
-        type="button"
-        onClick={() => onChange(null)}
-        className={cn(
-          "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
-          active === null
-            ? "border-primary bg-primary/15 text-foreground"
-            : "border-border/70 bg-card/60 text-muted-foreground hover:text-foreground",
-        )}
-      >
-        Todos {typeof totalCount === "number" && <span className="ml-1 text-xs opacity-70">({totalCount})</span>}
-      </button>
-      {categories.map((category) => {
-        const isActive = active === category;
-        return (
+    <div className="space-y-3">
+      {groups.map((group) => (
+        <div key={group.key} className="flex flex-wrap items-center gap-2">
+          <span className="w-20 shrink-0 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            {group.label}
+          </span>
+          <div className="flex flex-wrap gap-1.5">
+            <button
+              type="button"
+              onClick={() => group.onChange(null)}
+              className={cn(
+                "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+                group.active === null
+                  ? "border-primary bg-primary/15 text-foreground"
+                  : "border-border/60 bg-card/50 text-muted-foreground hover:border-border hover:text-foreground",
+              )}
+            >
+              Todos
+            </button>
+            {group.options.map((opt) => {
+              const isActive = group.active === opt.value;
+              const isEmpty = opt.count === 0;
+              return (
+                <button
+                  key={opt.value}
+                  type="button"
+                  disabled={isEmpty}
+                  onClick={() => group.onChange(isActive ? null : opt.value)}
+                  className={cn(
+                    "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+                    isActive
+                      ? "border-primary bg-primary/15 text-foreground"
+                      : isEmpty
+                        ? "cursor-not-allowed border-border/40 bg-card/30 text-muted-foreground/40"
+                        : "border-border/60 bg-card/50 text-muted-foreground hover:border-border hover:text-foreground",
+                  )}
+                >
+                  {opt.label}
+                  {!isEmpty && (
+                    <span className="ml-1 opacity-55">({opt.count})</span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+
+      <div className="flex items-center justify-between pt-1">
+        <p className="text-sm text-muted-foreground">
+          <span className="font-medium text-foreground">{filteredCount}</span>
+          {" "}
+          {filteredCount === 1 ? "produto encontrado" : "produtos encontrados"}
+          {filteredCount < totalCount && (
+            <span className="text-muted-foreground/60"> de {totalCount}</span>
+          )}
+        </p>
+        {hasActive && (
           <button
-            key={category}
             type="button"
-            onClick={() => onChange(isActive ? null : category)}
-            className={cn(
-              "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
-              isActive
-                ? "border-primary bg-primary/15 text-foreground"
-                : "border-border/70 bg-card/60 text-muted-foreground hover:text-foreground",
-            )}
+            onClick={onClear}
+            className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
           >
-            {category}
-            {counts?.[category] !== undefined && (
-              <span className="ml-1 text-xs opacity-70">({counts[category]})</span>
-            )}
+            <X className="size-3" />
+            Limpar filtros
           </button>
-        );
-      })}
+        )}
+      </div>
     </div>
   );
 }
