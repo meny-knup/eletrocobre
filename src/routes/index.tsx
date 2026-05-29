@@ -84,7 +84,7 @@ function HomePage() {
           <div className="space-y-8">
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-                Atendimento para todo o Brasil
+                Distribuidora B2B · Base em Guarulhos, SP
               </p>
               <h1 className="font-display text-5xl font-semibold leading-[1.02] text-foreground md:text-6xl">
                 Cabos e fios elétricos com resposta rápida para quem precisa comprar certo.
@@ -135,8 +135,8 @@ function HomePage() {
                 <dd className="mt-2 font-display text-2xl font-semibold">Consultivo</dd>
               </div>
               <div className="premium-card p-4">
-                <dt className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Cobertura</dt>
-                <dd className="mt-2 font-display text-2xl font-semibold">Brasil inteiro</dd>
+                <dt className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Orçamento</dt>
+                <dd className="mt-2 font-display text-2xl font-semibold">Pelo WhatsApp</dd>
               </div>
               <div className="premium-card p-4">
                 <dt className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Logística</dt>
@@ -431,15 +431,15 @@ function HomePage() {
             </p>
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <ArrowRight className="size-4 text-primary" />
-              <span>Orçamento sob medida</span>
+              <span>Especificação técnica antes do orçamento</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <ArrowRight className="size-4 text-primary" />
-              <span>WhatsApp como canal direto</span>
+              <span>Atendimento direto no WhatsApp</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <ArrowRight className="size-4 text-primary" />
-              <span>Apoio comercial para todo o Brasil</span>
+              <span>Entrega de Guarulhos para qualquer estado</span>
             </div>
           </div>
           <QuoteCta title="Solicitar orçamento agora" />

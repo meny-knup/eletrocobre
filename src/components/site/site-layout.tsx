@@ -26,7 +26,7 @@ export function SiteLayout() {
             />
             <div>
               <p className="font-display text-xl font-semibold leading-none">Eletrocobre</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">Cabos e fios para todo o Brasil</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">Distribuidora de cabos · Guarulhos, SP</p>
             </div>
           </Link>
 

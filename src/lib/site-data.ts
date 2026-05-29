@@ -46,7 +46,7 @@ export const trustPillars = [
 export const categoryHighlights = [
   {
     title: "Cabos residenciais",
-    description: "Soluções para instalações prediais, reformas e obras com foco em segurança e produtividade.",
+    description: "Flexíveis, PP e paralelos para instalações prediais e reformas — vendidos por metro ou em comprimentos fixos.",
     audience: "Construtoras, eletricistas e revendas",
   },
   {
@@ -56,7 +56,7 @@ export const categoryHighlights = [
   },
   {
     title: "Energia solar",
-    description: "Cabos preparados para projetos fotovoltaicos com resistência, durabilidade e confiabilidade.",
+    description: "Cabos para sistemas fotovoltaicos com dupla isolação, resistência UV e aprovação para uso externo — do telhado à usina.",
     audience: "Instaladores e EPCs",
   },
   {
@@ -70,7 +70,7 @@ export const differentials = [
   "Atendimento consultivo para indicar o cabo certo antes da compra.",
   "Orçamentos sob medida para volume, recorrência e necessidades técnicas.",
   "Curadoria de portfólio focada em aplicações reais, não só em códigos técnicos.",
-  "Suporte comercial ágil para obras, indústria, energia solar e revenda.",
+  "Resposta comercial no mesmo dia para obras com prazo apertado e projetos em andamento.",
 ];
 
 export const segmentSummaries = [
@@ -94,7 +94,7 @@ export const segmentSummaries = [
     slug: "energia-solar",
     title: "Energia solar",
     to: "/segmentos/energia-solar" as const,
-    description: "Soluções para instaladores e integradores que precisam de resistência e confiança no campo.",
+    description: "Para instaladores que não podem ter falha de material em campo e precisam de prazo previsível para fechar projetos.",
     painPoints: ["Exposição ao tempo", "Prazos de implantação", "Compatibilidade do projeto"],
     solutions: ["Cabos para solar", "Apoio comercial ágil", "Indicação por aplicação"],
   },
@@ -270,7 +270,7 @@ export const howItWorksSteps = [
   {
     step: "03",
     title: "Receba resposta ágil",
-    description: "Retornamos com orçamento, prazo de entrega e suporte técnico. Tudo direto no WhatsApp, sem burocracia.",
+    description: "Retornamos com orçamento, prazo de entrega e, se necessário, indicação técnica do material certo para a aplicação.",
   },
 ];
 
