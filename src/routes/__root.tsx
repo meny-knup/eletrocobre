@@ -3,6 +3,7 @@ import { HeadContent, Link, Scripts, createRootRoute } from "@tanstack/react-rou
 import appCss from "../styles.css?url";
 import simbolo from "@/assets/eletrocobre-simbolo.png";
 import { SiteLayout } from "@/components/site/site-layout";
+import { GOOGLE_ADS_ID } from "@/lib/analytics";
 import { OG_IMAGE_URL, SITE_URL } from "@/lib/site-data";
 
 const structuredData = JSON.stringify({
@@ -127,6 +128,13 @@ export const Route = createRootRoute({
       { rel: "apple-touch-icon", href: simbolo },
     ],
     scripts: [
+      {
+        src: `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`,
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${GOOGLE_ADS_ID}');`,
+      },
       {
         type: "application/ld+json",
         children: structuredData,

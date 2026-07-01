@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "@tanstack/react-router";
 import { Mail, MapPin, Menu, MessageCircle, X } from "lucide-react";
 import simbolo from "@/assets/eletrocobre-simbolo.png";
 import { Button } from "@/components/ui/button";
+import { initWhatsappConversionTracking } from "@/lib/analytics";
 import { navItems, WHATSAPP_NUMBER } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,8 @@ const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
 export function SiteLayout() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => initWhatsappConversionTracking(), []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
