@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SegmentosRouteImport } from './routes/segmentos'
 import { Route as ProdutosRouteImport } from './routes/produtos'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as OrcamentoRouteImport } from './routes/orcamento'
 import { Route as ComoEscolherRouteImport } from './routes/como-escolher'
 import { Route as IndexRouteImport } from './routes/index'
@@ -34,6 +35,11 @@ const SegmentosRoute = SegmentosRouteImport.update({
 const ProdutosRoute = ProdutosRouteImport.update({
   id: '/produtos',
   path: '/produtos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrcamentoRoute = OrcamentoRouteImport.update({
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/como-escolher': typeof ComoEscolherRoute
   '/orcamento': typeof OrcamentoRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/produtos': typeof ProdutosRoute
   '/segmentos': typeof SegmentosRouteWithChildren
   '/sobre': typeof SobreRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/como-escolher': typeof ComoEscolherRoute
   '/orcamento': typeof OrcamentoRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/produtos': typeof ProdutosRoute
   '/sobre': typeof SobreRoute
   '/segmentos/construcao-civil': typeof SegmentosConstrucaoCivilRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/como-escolher': typeof ComoEscolherRoute
   '/orcamento': typeof OrcamentoRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/produtos': typeof ProdutosRoute
   '/segmentos': typeof SegmentosRouteWithChildren
   '/sobre': typeof SobreRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/como-escolher'
     | '/orcamento'
+    | '/privacidade'
     | '/produtos'
     | '/segmentos'
     | '/sobre'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/como-escolher'
     | '/orcamento'
+    | '/privacidade'
     | '/produtos'
     | '/sobre'
     | '/segmentos/construcao-civil'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '/'
     | '/como-escolher'
     | '/orcamento'
+    | '/privacidade'
     | '/produtos'
     | '/segmentos'
     | '/sobre'
@@ -162,6 +174,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComoEscolherRoute: typeof ComoEscolherRoute
   OrcamentoRoute: typeof OrcamentoRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   ProdutosRoute: typeof ProdutosRoute
   SegmentosRoute: typeof SegmentosRouteWithChildren
   SobreRoute: typeof SobreRoute
@@ -188,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/produtos'
       fullPath: '/produtos'
       preLoaderRoute: typeof ProdutosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/orcamento': {
@@ -273,6 +293,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComoEscolherRoute: ComoEscolherRoute,
   OrcamentoRoute: OrcamentoRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   ProdutosRoute: ProdutosRoute,
   SegmentosRoute: SegmentosRouteWithChildren,
   SobreRoute: SobreRoute,

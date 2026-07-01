@@ -194,7 +194,12 @@ export function SiteLayout() {
         <div className="border-t border-border/60">
           <div className="site-container flex flex-col gap-1 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} Eletrocobre · Todos os direitos reservados.</p>
-            <p className="text-muted-foreground/60">CNPJ 65.824.251/0001-36 · Guarulhos, SP</p>
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
+              <Link to="/privacidade" className="transition-colors hover:text-foreground">
+                Política de Privacidade
+              </Link>
+              <span className="text-muted-foreground/60">CNPJ 65.824.251/0001-36 · Guarulhos, SP</span>
+            </div>
           </div>
         </div>
       </footer>
