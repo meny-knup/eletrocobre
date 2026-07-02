@@ -1,14 +1,53 @@
 # EletroCobre — Estado do Projeto
 
-> Última atualização: 2026-05-29
-> Commit atual: `1f95ce8`
+> Última atualização: 2026-07-01
+> Commit atual: `458c8b2`
 > Branch: `main`
 > Repositório: https://github.com/meny-knup/eletrocobre
 > Produção: https://eletrocobre.com.br
 
 ---
 
-## O que foi feito nesta sessão
+## Sessão 2026-07-01 — Google Ads (rastreamento + campanha)
+
+### Rastreamento de conversão instalado
+- **Tag do Google (gtag.js)** instalada no `__root.tsx` → carrega em todas as páginas.
+  - ID: `AW-18197000501` (Google Ads).
+  - Conversão "Clique no Botão do WhatsApp": `send_to = AW-18197000501/-BKdCJidkskcELXigOVD`.
+- `src/lib/analytics.ts` (novo): função de conversão + **listener central** que captura clique em
+  qualquer link `wa.me` / `whatsapp.com` (header, footer, botão flutuante, CTA, cards, orçamento),
+  inclusive botões futuros. Ativado via `useEffect` no `SiteLayout`.
+- Commit `0fb309a`. Validado: `tsc` limpo + build OK + tag presente no HTML gerado.
+
+### Política de Privacidade (requisito Google Ads + LGPD)
+- Nova rota `/privacidade` (`src/routes/privacidade.tsx`) com dados reais (CNPJ, endereço, contato),
+  cobrindo cookies, Google Ads/gtag, WhatsApp e direitos LGPD. Link no rodapé.
+- Commit `458c8b2`. `tsc` limpo + build OK. **Resolveu o bloqueador nº1 do Google Ads.**
+
+### Playbook oficial de tráfego pago (fora do repo git)
+- `C:\Projects\NoiseLabs\docs\playbooks\GOOGLE-ADS-ELETROCOBRE-SEMANA1.md` + `.pdf` (v1.1, identidade Noise Labs).
+- Contém: contexto, decisões aprovadas, cronograma 7 dias, checklist, 10 keywords oficiais,
+  negativas (5 blocos), dashboard, critérios de sucesso, lições aprendidas e **anúncios RSA completos**
+  (15 títulos + 4 descrições + config de pinagem + sitelinks + callouts + snippets).
+
+### Estratégia de campanha (semana 1 — aquecimento)
+- R$110 / 7 dias (~R$16/dia) · Rede de Pesquisa · Display OFF · Parceiros OFF.
+- Lance: **Maximizar Cliques** com teto de CPC R$3–4 (conta sem histórico → NÃO usar Max. Conversões ainda).
+- **1 campanha · 1 grupo** · destino `/produtos` · geo recomendado: SP + Sudeste (concentrar aprendizado).
+- Meta: validar encanamento + colher termos vencedores. NÃO medir ROI/CAC/escala nesta semana.
+
+### Pendências Google Ads — próximas ações (do lado da CONTA, não do código)
+- [ ] **Verificação de identidade do anunciante** (pode demorar dias — iniciar já).
+- [ ] **Faturamento** ativo (BRL).
+- [ ] **Validar a conversão disparando** no Tag Assistant e marcar como **Principal**.
+      🚩 Não veicular antes de ver o evento `conversion` disparar.
+- [ ] Montar campanha com keywords + negativas + RSA do playbook.
+- [ ] (Opcional) Instalar **GA4** em paralelo (só análise/remarketing — NÃO importar como 2ª conversão).
+- [ ] Registrar em planilha quantos cliques viram **conversa real** no WhatsApp (fechar o loop).
+
+---
+
+## O que foi feito na sessão 2026-05-29
 
 ### Imagens e catálogo
 - 46 imagens de produtos baixadas e hospedadas localmente em `public/products/`
